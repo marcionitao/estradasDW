@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class EstradasDWController {
+public class AdminController {
   
-    @RequestMapping(method=RequestMethod.GET, value="/recipes")
+   /* @RequestMapping(method=RequestMethod.GET, value="/recipes")
     public String listRecipes(Model model) {
 
         List<String> values = new ArrayList<String>();
@@ -36,7 +36,7 @@ public class EstradasDWController {
 			return "recipeNotFound";
 		}
     }
-        
+        */
     
     
 }
