@@ -143,7 +143,7 @@
 
                 </div><!--row -->
             </div><!--my_page-header-->
-
+            
             <!--Inicio do Bloco de Imagens -->
             <div class="row-fluid">
                 <div class="span6">
@@ -220,6 +220,27 @@
             </footer>
 
         </div> <!-- /container -->
+        
+        
+          <table border="1">
+            <th>id_menu</th>
+            <th>item_menu</th>
+            <th>descricao_menu</th>
+            <th>url</th>
+
+            <!--parte refernte a listagem-->
+            <c:forEach items="${menuList}" var="menu">
+                <tr>
+                    <td>${menu.id_menu}</td>
+                    <td>${menu.item_menu}</td>
+                    <td>${menu.descricao_menu}</td>
+                    <td>${menu.url}</td>
+                </tr>
+            </c:forEach>
+        </table>
+        
+        
+        
 
         <!-- Le javascript
         ================================================== -->
