@@ -20,7 +20,7 @@
 
     <body>
 
-        <!--Inicio da barra horizontal preta do top da pagina-->
+         <%--Inicio da barra horizontal preta do top da pagina--%>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -29,30 +29,30 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!--Define os botões na barra horizontal do top da pagina-->
+                     <%--Define os botões na barra horizontal do top da pagina--%>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="#contact" id="contatos">Contatos</a></li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" id="diversos">Diversos</a>
                         </ul>
-                        <!--Define os campos para user e passwor com botão-->
+                         <%--Define os campos para user e passwor com botão--%>
                         <form class="navbar-form pull-right">
                             <input class="span2" type="text" placeholder="Utilizador">
                             <input class="span2" type="password" placeholder="Password">
                             <button type="submit" class="btn">Login</button>
                         </form>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container -->
-            </div><!--/.nav-inner -->
-        </div><!--/.navbar navbar-inverse navbar-fixed-top -->
+                    </div> <%--/.nav-collapse --%>
+                </div> <%--/.container --%>
+            </div> <%--/.nav-inner --%>
+        </div> <%--/.navbar navbar-inverse navbar-fixed-top --%>
 
         <div class="container">
-            <!-- my_page-header é um estilo definido em estradas.css -->
+             <%-- my_page-header é um estilo definido em estradas.css --%>
             <div class="my_page-header">
-                <!--Divisão em blocos-->
+                 <%--Divisão em blocos--%>
                 <div class="row"> 
-                    <!--1º bloco contem o logo da empresa EP-->
+                     <%--1º bloco contem o logo da empresa EP--%>
                     <div class="span2"> 
                         <img src="/resources/img/estradasdeportugalkt8.png" alt="">
                     </div>
@@ -62,10 +62,10 @@
 
 
 
-                    <!--2º bloco contem a barra de menu estilo nav-tab-->
+                     <%--2º bloco contem a barra de menu estilo nav-tab--%>
                     <div class="span12" style="margin-top:20px;">
                         <div class="tabbable tabs"> 
-                            <!--my_nav-tabs é um estido definido em estradas.css-->
+                             <%--my_nav-tabs é um estido definido em estradas.css--%>
                             <ul class="nav my_nav-tabs" >
                                 <li class="active"><a href="#DW" data-toggle="tab">DW</a></li>
                                 <li><a href="#SCRAP" data-toggle="tab">SCRAP</a></li>
@@ -76,7 +76,7 @@
                             </ul>
 
                             <div class="tab-content">
-                                <!--Caixa que surgirão apos o item de menu ser seleccionado-->
+                                 <%--Caixa que surgirão apos o item de menu ser seleccionado--%>
                                 <div class="tab-pane fade in active" id="DW" >
                                     <h4 style="color:#5DAAEF">Data Warehouse</h4>
                                     <p>O Data Warehouse das Estradas de Portugal, S.A. pretende ser uma plataforma que centraliza, por área, dados operacionais. Aplicando as melhores práticas conhecidas na indústria, recolhe, valida, uniformiza, agrega e disponibiliza informação sob vários formatos. O produto final será informação estratégica de qualidade.</p>
@@ -84,7 +84,7 @@
                                 </div>
 
                                 <div class="tab-pane fade" id="SCRAP">              
-                                    <!--Inicio da tabela com os dados para serem acessados-->
+                                     <%--Inicio da tabela com os dados para serem acessados--%>
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -112,7 +112,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <!--Fim da tabela com os dados para serem acessados-->
+                                     <%--Fim da tabela com os dados para serem acessados--%>
                                 </div>
 
                                 <div class="tab-pane fade" id="Volumes_Tr">
@@ -136,15 +136,15 @@
                                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
                                 </div>
 
-                            </div><!--tab-content -->
+                            </div> <%--tab-content --%>
 
-                        </div><!--tabbable tabs-->
-                    </div><!--span12 -->
+                        </div> <%--tabbable tabs--%>
+                    </div> <%--span12 --%>
 
-                </div><!--row -->
-            </div><!--my_page-header-->
+                </div> <%--row --%>
+            </div> <%--my_page-header--%>
             
-            <!--Inicio do Bloco de Imagens -->
+             <%--Inicio do Bloco de Imagens --%>
             <div class="row-fluid">
                 <div class="span6">
                     <h4>DW - RECURSOS</h4>
@@ -189,9 +189,9 @@
 
                     </ul>
                 </div>
-                <!--Fim do Bloco de Imagens -->
+                 <%--Fim do Bloco de Imagens --%>
 
-                <!--Inicio do Bloco de Noticias-->
+                 <%--Inicio do Bloco de Noticias--%>
                 <div class="span6">
                     <h4>DW - NOTICIAS</h4>
                     <table class="table table-striped table-bordered">
@@ -212,43 +212,39 @@
                     </table>
                 </div>
             </div>
-            <!--Inicio do Bloco de Noticias-->
+             <%--Inicio do Bloco de Noticias--%>
             <hr>
 
             <footer>
                 <p> Copyright &copy; 2013 Estradas de Portugal, S.A.</p>
             </footer>
 
-        </div> <!-- /container -->
+        </div>  <%-- /container --%>
         
         
-          <table border="1">
-            <th>id_menu</th>
-            <th>item_menu</th>
-            <th>descricao_menu</th>
-            <th>url</th>
+        
 
-            <!--parte refernte a listagem-->
+        <%--parte refernte a listagem do menu--%>
             <c:forEach items="${menuList}" var="menu">
-                <tr>
-                    <td>${menu.id_menu}</td>
-                    <td>${menu.item_menu}</td>
-                    <td>${menu.descricao_menu}</td>
-                    <td>${menu.url}</td>
-                </tr>
+                <ul>
+                    <li>${menu.id_menu}</li>
+                    <li>${menu.item_menu}</li>
+                    <li>${menu.descricao_menu}</li>
+                    <li>${menu.url}</li>
+                </ul>
             </c:forEach>
-        </table>
+       
         
         
         
 
-        <!-- Le javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
+         <%-- Le javascript
+        ================================================== --%>
+         <%-- Placed at the end of the document so the pages load faster --%>
         <script src="/resources/js/jquery.js"></script>
         <script src="/resources/js/bootstrap.min.js"></script>
 
-        <!--Esta funcão determina que, ao passar o mouse por cima da TAB, o conteudo muda, se apagar, volta ao normal ou seja, tem que se clicar para alterar o conteudo-->
+         <%--Esta funcão determina que, ao passar o mouse por cima da TAB, o conteudo muda, se apagar, volta ao normal ou seja, tem que se clicar para alterar o conteudo--%>
         <script type="text/javascript">
 
             $(function() {
