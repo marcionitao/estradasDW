@@ -14,6 +14,18 @@
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
         <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
+        
+        <style type="text/css">
+            
+            #list{
+                display: inline;
+            }
+
+            #list li{
+                float: left;
+            }
+            
+        </style>
 
     </head>
 
@@ -67,12 +79,20 @@
                         <div class="tabbable tabs"> 
                              <%--my_nav-tabs é um estido definido em estradas.css--%>
                             <ul class="nav my_nav-tabs" >
+                                <%--menus fixos--%>
                                 <li class="active"><a href="#DW" data-toggle="tab">DW</a></li>
                                 <li><a href="#SCRAP" data-toggle="tab">SCRAP</a></li>
-                                <li><a href="#Volumes_Tr"data-toggle="tab">Volumes Tráfego</a></li>
-                                <li><a href="#Ind_Gestao"data-toggle="tab">Indicadores Gestão</a></li>
-                                <li><a href="#EasyToll"data-toggle="tab" >EasyToll</a></li>
-                                <li><a href="#Quiosques"data-toggle="tab">Quiosques</a></li>
+                                
+                                 <%--menus dinamicos--%>
+                                <c:forEach items="${menuList}" var="menu">
+                                    <li><a href="#${menu.id_menu}" data-toggle="tab">${menu.item_menu}</a></li>
+                                   
+                                 olumes_Tr"data-toggle="tab">Volumes Tráfego</a></li>
+                                    <li><a href="#Ind_Gestao"data-toggle="tab">Indicadores Gestão</a></li>
+                                    <li><a href   <%--
+                                    <li><a href="#V="#EasyToll"data-toggle="tab" >EasyToll</a></li>
+                                    <li><a href="#Quiosques"data-toggle="tab">Quiosques</a></li>--%>
+                                </c:forEach>
                             </ul>
 
                             <div class="tab-content">
@@ -82,7 +102,7 @@
                                     <p>O Data Warehouse das Estradas de Portugal, S.A. pretende ser uma plataforma que centraliza, por área, dados operacionais. Aplicando as melhores práticas conhecidas na indústria, recolhe, valida, uniformiza, agrega e disponibiliza informação sob vários formatos. O produto final será informação estratégica de qualidade.</p>
                                     <p><a href="#" class="btn btn-default btn-small" style="color:#0072BB">Saber mais &raquo;</a></p>
                                 </div>
-
+                              
                                 <div class="tab-pane fade" id="SCRAP">              
                                      <%--Inicio da tabela com os dados para serem acessados--%>
                                     <table class="table">
@@ -115,29 +135,18 @@
                                      <%--Fim da tabela com os dados para serem acessados--%>
                                 </div>
 
-                                <div class="tab-pane fade" id="Volumes_Tr">
-                                    <h4 style="color:#5DAAEF">Volumes de Tráfego</h4>            
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                                </div>
-
-
-                                <div class="tab-pane fade" id="Ind_Gestao">
-                                    <h4 style="color:#5DAAEF">Indicadores Gestão</h4>         
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                                </div>
-
-                                <div class="tab-pane fade" id="EasyToll">
-                                    <h4 style="color:#5DAAEF">EasyToll</h4>               
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                                </div>
-
-                                <div class="tab-pane fade" id="Quiosques">
-                                    <h4 style="color:#5DAAEF">Quiosques</h4>
-                                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                                </div>
+                              
+                              <%--Inicio da caixa de informações dos botões--%>
+                                <c:forEach items="${menuList}" var="menu">
+                                    <div class="tab-pane fade" id="${menu.id_menu}">
+                                        <h4 style="color:#5DAAEF">${menu.item_menu}</h4>
+                                        <p>${menu.descricao_menu}.</p>
+                                        <p><a href="${menu.url}" class="btn btn-default btn-small" style="color:#0072BB">Saber mais &raquo;</a></p>
+                                    </div>           
+                                </c:forEach>
 
                             </div> <%--tab-content --%>
-
+                      
                         </div> <%--tabbable tabs--%>
                     </div> <%--span12 --%>
 
@@ -221,21 +230,7 @@
 
         </div>  <%-- /container --%>
         
-        
-        
-
-        <%--parte refernte a listagem do menu--%>
-            <c:forEach items="${menuList}" var="menu">
-                <ul>
-                    <li>${menu.id_menu}</li>
-                    <li>${menu.item_menu}</li>
-                    <li>${menu.descricao_menu}</li>
-                    <li>${menu.url}</li>
-                </ul>
-            </c:forEach>
-       
-        
-        
+   
         
 
          <%-- Le javascript
