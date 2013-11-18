@@ -15,18 +15,6 @@
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
         <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
         
-        <style type="text/css">
-            
-            #list{
-                display: inline;
-            }
-
-            #list li{
-                float: left;
-            }
-            
-        </style>
-
     </head>
 
 
@@ -64,17 +52,16 @@
             <div class="my_page-header">
                  <%--Divisão em blocos--%>
                 <div class="row"> 
-                     <%--1º bloco contem o logo da empresa EP--%>
+                     <%--inicio bloco contem o logo e nome da empresa EP--%>
                     <div class="span2"> 
                         <img src="/resources/img/estradasdeportugalkt8.png" alt="">
                     </div>
                     <div class="span10" > 
                         <h2 style="color:#66676B;">Data Warehouse EP</h2>
                     </div>
+                    <%--fim bloco contem o logo e nome da empresa EP--%>
 
-
-
-                     <%--2º bloco contem a barra de menu estilo nav-tab--%>
+                     <%--inicio bloco contem a barra de menu estilo nav-tab--%>
                     <div class="span12" style="margin-top:20px;">
                         <div class="tabbable tabs"> 
                              <%--my_nav-tabs é um estido definido em estradas.css--%>
@@ -85,13 +72,9 @@
                                 
                                  <%--menus dinamicos--%>
                                 <c:forEach items="${menuList}" var="menu">
+                                
                                     <li><a href="#${menu.id_menu}" data-toggle="tab">${menu.item_menu}</a></li>
-                                   
-                                 olumes_Tr"data-toggle="tab">Volumes Tráfego</a></li>
-                                    <li><a href="#Ind_Gestao"data-toggle="tab">Indicadores Gestão</a></li>
-                                    <li><a href   <%--
-                                    <li><a href="#V="#EasyToll"data-toggle="tab" >EasyToll</a></li>
-                                    <li><a href="#Quiosques"data-toggle="tab">Quiosques</a></li>--%>
+                                
                                 </c:forEach>
                             </ul>
 
@@ -149,6 +132,7 @@
                       
                         </div> <%--tabbable tabs--%>
                     </div> <%--span12 --%>
+                    <%--fim bloco contem a barra de menu estilo nav-tab--%>
 
                 </div> <%--row --%>
             </div> <%--my_page-header--%>
@@ -157,8 +141,7 @@
             <div class="row-fluid">
                 <div class="span6">
                     <h4>DW - RECURSOS</h4>
-                    <table class="table table-striped table-bordered">
-                    </table>
+                    
                     <ul class="thumbnails">
 
                         <li >

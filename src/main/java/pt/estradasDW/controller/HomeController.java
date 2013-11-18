@@ -16,11 +16,19 @@ public class HomeController {
     private MenuService menuService;
 
     //metodo que irá listar os itens de menu. Os mesmos serão personalizados na pagina homeDW
-    @RequestMapping(method = RequestMethod.GET, value = "/homeDW")
+    @RequestMapping(method = RequestMethod.GET, value = "/homedw")
     public String showHome(Map<String, Object> map) {
 
         map.put("menuList", menuService.getAllMenu());
 
         return "homeDW";
     }
+    
+    //metodo que irá abrir a pagina de Administração
+    @RequestMapping(method = RequestMethod.GET, value = "/homedw/admin")
+    public String showAdmin(Map<String, Object> map) {
+
+        return "admin";
+    }
+    
 }

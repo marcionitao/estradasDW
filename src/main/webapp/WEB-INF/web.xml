@@ -24,9 +24,9 @@
     </servlet-mapping> 
     
      <welcome-file-list>
-        <welcome-file>homeDW.html</welcome-file>
-        <welcome-file>homeDW.htm</welcome-file>
-        <welcome-file>homeDW.jsp</welcome-file>
+        <welcome-file>homedw.html</welcome-file>
+        <welcome-file>homedw.htm</welcome-file>
+        <welcome-file>homedw.jsp</welcome-file>
         <welcome-file>default.html</welcome-file>
         <welcome-file>default.htm</welcome-file>
         <welcome-file>default.jsp</welcome-file>
