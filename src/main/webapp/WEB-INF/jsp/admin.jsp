@@ -38,7 +38,7 @@
                     <%--inicio bloco contem o logo e nome da empresa EP--%>
 
                     <div class="span12" > 
-                        <h2 style="color:#0072BB;"align="left">DW - Gestão da Página Inicial</h2>
+                        <h3 style="color:#0072BB;"align="left">DW - Gestão da Página Inicial</h3>
                     </div>
                     <%--fim bloco contem o logo e nome da empresa EP--%>
 
@@ -61,7 +61,7 @@
                             <h5 style="text-align:center;">HomeDW</h5>     
                         </li>
                         <li >
-                            <a href="/homedw/admin/menu.html" class="thumbnail">
+                            <a href="/homedw/admin/listMenu.html" class="thumbnail">
                                 <img src="/resources/img/menu.png" alt="Menu" title="Menu">
                             </a>
                             <h5 style="text-align:center;">Menu</h5>

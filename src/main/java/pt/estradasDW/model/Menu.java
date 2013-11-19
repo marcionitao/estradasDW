@@ -24,6 +24,7 @@ public class Menu implements Serializable{
     
     public Menu(){}
 
+    //Construtor
     public Menu(int id_menu, String item_menu, String descricao_menu, String url) {
         this.id_menu = id_menu;
         this.item_menu = item_menu;
