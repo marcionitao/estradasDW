@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" pageEncoding="UTF-8" import="java.sql.*" errorPage="" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
     <head>
@@ -39,21 +38,21 @@
                 <div class="row"> 
                     <%--inicio bloco contem o titulo e botões de acesso as paginas--%>
                     <div class="span9" > 
-                        <h3 style="color:#0072BB;"align="left">DW - Gestão dos Menus</h3>
+                        <h3 style="color:#0072BB;"align="left">DW - Novo item de Menu</h3>
                     </div>
                     <div class="span1" >   
                         <a href="/homedw.html" class="thumbnail">
-                                <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">
+                            <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">
                         </a>
                     </div>
-                     <div class="span1" >   
-                        <a href="/homedw/admin/novoItem.html" class="thumbnail">
-                                <img src="/resources/img/add.png" alt="add" title="Novo Item">
+                    <div class="span1" >   
+                        <a href="/homedw/admin/listMenu.html" class="thumbnail">
+                            <img src="/resources/img/list.png" alt="list" title="Listar Itens">
                         </a>
                     </div>
                     <div class="span1" >   
                         <a href="/homedw/admin.html" class="thumbnail">
-                                <img src="/resources/img/admin.png" alt="Admin" title="Administração">
+                            <img src="/resources/img/admin.png" alt="Admin" title="Administração">
                         </a>
                     </div>
                     <%--fim bloco contem o titulo e botões de acesso as paginas--%>
@@ -64,48 +63,36 @@
 
         </div>  <%--1º container --%>  
 
-        <div class="table-responsive"><%-- 2º container --%>  
+        <div class="container"><%-- 2º container --%>  
 
-            <table class="table table-bordered" align="center" style="width: 70%;">
-                <tr class="info">
+            <form:form action="/homedw/admin/listMenu.html" method="POST" commandName="menu" id="form">
+                <table width=80% align="right">
 
-                    <td><strong>Id</strong></td>
-                    <td><strong>Item Menu</strong></td>
-                    <td><strong>Ação</strong></td>
-
-                </tr>
-
-                <!--parte refernte a listagem-->
-                <c:forEach items="${menuList}" var="menu">
-                    <c:url var="url" value="/homedw/admin/editItem/${menu.id_menu}" />   
-
-                    <tr class="default">
-
-                        <%--url refere-se ao conteudo do id receitas, é uma variavel antes da listagem --%>
-                        <form:form action="${url}/edit" method="GET">
-
-                            <%--aqui, definimos que será mostrado o id e o titulo da receita, mas apenas o titulo é clicavel --%>
-                            <td>${menu.id_menu}</td>
-                            <td><a href="<c:url value="/homedw/admin/editItem/"/>${menu.id_menu}/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
-
-                        </form:form>
-
-                        <%--url refere-se ao botão para eliminar receita --%>
-                        <form:form action="${url}" method="DELETE">
-
-                            <%--aqui, definimos um botão "eliminar" para cada receita. --%>
-                            <td><a href="/listMenu/${menu.id_menu}"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
-
-                        </form:form> 
-
-
+                    <tr>
+                        <td width="120px"><strong/>Item</td>
+                        <td><form:input path="item_menu" class="input-xxlarge"  style="height: 25px;" autofocus="autofocus" id="item_menu"/></td>
                     </tr>
+                    <tr>
+                        <td valign=top><strong/>Descrição</td>
+                        <td><form:textarea path="descricao_menu" class="input-xxlarge" rows="5" id="descricao_menu"/></td>
+                    </tr>
+                    <tr>
+                        <td><strong/>URL</td>
+                        <td><form:input path="url" class="input-xxlarge" style="height: 25px;" id="url"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <td>
+                            <!--parte refernte aos botões -->                
+                            <button type="submit" name="action" class="btn btn-info" value="add" id="add">Guardar</button>  
+                            <button type="reset" name="action" class="btn btn-success" value="cancel">Cancelar</button>  
+                        </td>
+                    </tr>
+                </table>
+            </form:form>
+        </div><%--2º container --%>  
 
-                </c:forEach>
-            </table>
 
-         </div> <%-- 2º container --%>  
-       
         <%-- Le javascript
        ================================================== --%>
         <%-- Placed at the end of the document so the pages load faster --%>

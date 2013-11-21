@@ -20,51 +20,56 @@ public class AdminController {
     @Autowired
     private MenuService menuService;
 
-      //metodo que cria o fomulario para criar as receitas
-    @RequestMapping("/homedw/admin/listMenu")
+    //metodo para listar os itens de menu
+    @RequestMapping(value = "/homedw/admin/listMenu", method = RequestMethod.GET)
+    public String listMenu(Map<String, Object> map) {
+
+        map.put("menuList", menuService.getAllMenu());
+
+        return "listMenu";
+    }
+
+    //metodo que cria o fomulario para criar os itens de menu
+    @RequestMapping(value= "/homedw/admin/novoItem", method = RequestMethod.GET)
     public String form(ModelMap map) {
 
         Menu menu = new Menu();
 
         map.addAttribute("menu", menu);
-       
-        map.addAttribute("menuList", menuService.getAllMenu());
 
-        return "listMenu";
+        return "createMenu";
     }
-
-    /*@RequestMapping(value = "/homedw/admin/menu.do", method = RequestMethod.POST)
-    public String doActions(@ModelAttribute Menu menu, BindingResult result, @RequestParam String action, Map<String, Object> map) {
-        Menu menuResult = new Menu();
-
-            menuService.addMenu(menu);
-            menuResult = menu;      
-
-        map.put("menu", menuResult);
-        map.put("menuList", menuService.getAllMenu());
-        return "listMenu";
+  
+    //metodo que grava no DB o fomulario de criar itens
+    @RequestMapping(value= "/homedw/admin/listMenu", method = RequestMethod.POST)
+    public String doActions(@ModelAttribute("menu") Menu menu) {
+               
+        menuService.addMenu(menu);
+     
+        return "redirect:/homedw/admin/listMenu.html";
     }
     
-     @RequestMapping(value = "/menu/{id}", method = RequestMethod.GET)
+    //metodo que traz o conteudo do item que se pretende editar
+    @RequestMapping(value = "/homedw/admin/editItem/{id}/edit", method = RequestMethod.GET)
     public String editForm(@PathVariable("id") int idMenu, ModelMap map) {
 
         Menu menu = menuService.getMenu(idMenu);
         map.addAttribute("menu", menu);
-       
+
         return "updateMenu";
     }
 
-    //acção de editar as receitas
-    @RequestMapping("/menu/*")
-    public String update(@ModelAttribute("receita") Menu menu) {
+    //acção de editar os itens de menu
+    //@RequestMapping("/menu/*")
+    @RequestMapping("/**")
+    public String update(@ModelAttribute("menu") Menu menu) {
 
         menuService.editMenu(menu);
 
-        return "redirect:/listMenu";
+        return "redirect:/homedw/admin/listMenu.html";
+    }
 
-    }*/
-    
-      //metodo para eliminar a receita
+    //metodo para eliminar a receita
     @RequestMapping("/listMenu/{id}")
     public String deleteReceita(@PathVariable("id") int idMenu) {
         //chama o metodo e passa o valor do id do registo a ser eliminado
