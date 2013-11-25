@@ -43,17 +43,17 @@
                     </div>
                     <div class="span1" >   
                         <a href="/homedw.html" class="thumbnail">
-                                <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">
+                            <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">
                         </a>
                     </div>
-                     <div class="span1" >   
+                    <div class="span1" >   
                         <a href="/homedw/admin/novoItem.html" class="thumbnail">
-                                <img src="/resources/img/add.png" alt="add" title="Novo Item">
+                            <img src="/resources/img/add.png" alt="add" title="Novo Item">
                         </a>
                     </div>
                     <div class="span1" >   
                         <a href="/homedw/admin.html" class="thumbnail">
-                                <img src="/resources/img/admin.png" alt="Admin" title="Administração">
+                            <img src="/resources/img/admin.png" alt="Admin" title="Administração">
                         </a>
                     </div>
                     <%--fim bloco contem o titulo e botões de acesso as paginas--%>
@@ -66,51 +66,50 @@
 
         <div class="table-responsive"><%-- 2º container --%>  
 
-            <table class="table table-bordered" align="center" style="width: 70%;">
+            <table class="table table-bordered" align="center" style="width: 50%;">
                 <tr class="info">
 
-                    <td><strong>Id</strong></td>
+                    <td width="10px"><strong>Id</strong></td>
                     <td><strong>Item Menu</strong></td>
-                    <td><strong>Ação</strong></td>
+                    <td width="10px"><strong>Ação</strong></td>
 
                 </tr>
 
                 <!--parte refernte a listagem-->
                 <c:forEach items="${menuList}" var="menu">
+                    <%--criamos uma variavel para conter o caminho que pretendemos--%>
                     <c:url var="url" value="/homedw/admin/editItem/${menu.id_menu}" />   
+                    <c:url var="url_2" value="/homedw/admin/deleteItem/${menu.id_menu}" />   
 
-                    <tr class="default">
+                    <tr class="warning">
 
                         <%--url refere-se ao conteudo do id receitas, é uma variavel antes da listagem --%>
                         <form:form action="${url}/edit" method="GET">
 
                             <%--aqui, definimos que será mostrado o id e o titulo da receita, mas apenas o titulo é clicavel --%>
                             <td>${menu.id_menu}</td>
-                            <td><a href="<c:url value="/homedw/admin/editItem/"/>${menu.id_menu}/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
-
+                            <td><a href="<c:url value="${url}"/>/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
                         </form:form>
 
                         <%--url refere-se ao botão para eliminar receita --%>
-                        <form:form action="${url}" method="DELETE">
+                        <form:form action="${url_2}/delete" method="DELETE">
 
-                            <%--aqui, definimos um botão "eliminar" para cada receita. --%>
-                            <td><a href="/listMenu/${menu.id_menu}"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
-
-                        </form:form> 
-
+                            <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
+                            <td><a href="<c:url value="${url_2}"/>/delete.html"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
+                                </form:form> 
 
                     </tr>
 
                 </c:forEach>
             </table>
 
-         </div> <%-- 2º container --%>  
-       
+        </div> <%-- 2º container --%>  
+
         <%-- Le javascript
        ================================================== --%>
-        <%-- Placed at the end of the document so the pages load faster --%>
+        <%-- Placed at the end of the document so the pages load faster 
         <script src="/resources/js/jquery.js"></script>
-        <script src="/resources/js/bootstrap.min.js"></script>
+        <script src="/resources/js/bootstrap.min.js"></script>--%>
 
     </body>
 </html>

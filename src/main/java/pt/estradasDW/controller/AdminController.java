@@ -60,7 +60,6 @@ public class AdminController {
     }
 
     //acção de editar os itens de menu
-    //@RequestMapping("/menu/*")
     @RequestMapping("/**")
     public String update(@ModelAttribute("menu") Menu menu) {
 
@@ -70,12 +69,12 @@ public class AdminController {
     }
 
     //metodo para eliminar a receita
-    @RequestMapping("/listMenu/{id}")
+    @RequestMapping(value = "/homedw/admin/deleteItem/{id}/delete")
     public String deleteReceita(@PathVariable("id") int idMenu) {
         //chama o metodo e passa o valor do id do registo a ser eliminado
         menuService.deleteMenu(idMenu);
 
-        //após eliminar ele redireciona para o listarReceita
-        return "redirect:/listMenu";
+        //após eliminar ele redireciona para o listar itensdo menu
+        return "redirect:/homedw/admin/listMenu.html";
     }
 }

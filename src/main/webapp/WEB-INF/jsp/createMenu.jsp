@@ -6,14 +6,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>DW-Admin, Menus</title>
+        <title>DW-Administração</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-        <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
 
     </head>
 
@@ -65,39 +64,35 @@
 
         <div class="container"><%-- 2º container --%>  
 
-            <form:form action="/homedw/admin/listMenu.html" method="POST" commandName="menu" id="form">
+            <form:form action="/homedw/admin/listMenu.html" method="POST" commandName="menu" id="contact-form">
                 <table width=80% align="right">
 
                     <tr>
-                        <td width="120px"><strong/>Item</td>
-                        <td><form:input path="item_menu" class="input-xxlarge"  style="height: 25px;" autofocus="autofocus" id="item_menu"/></td>
+                        <td width="120px" class="control-group"><strong for="item_menu"/>Item</td>
+                        <td class="control-group"><form:input path="item_menu" class="input-xxlarge"  style="height: 25px;" autofocus="autofocus" name="item_menu" id="item_menu"/></td>
                     </tr>
+
                     <tr>
-                        <td valign=top><strong/>Descrição</td>
-                        <td><form:textarea path="descricao_menu" class="input-xxlarge" rows="5" id="descricao_menu"/></td>
+                        <td valign=top class="control-group"><strong for="descricao_menu"/>Descrição</td>
+                        <td class="control-group"><form:textarea path="descricao_menu" class="input-xxlarge" rows="5" name="descricao_menu" id="descricao_menu"/></td>
                     </tr>
+
                     <tr>
-                        <td><strong/>URL</td>
-                        <td><form:input path="url" class="input-xxlarge" style="height: 25px;" id="url"/></td>
+                        <td class="control-group"><strong for="url"/>URL</td>
+                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 25px;" name="url" id="url"/></td>
                     </tr>
                     <tr>
                         <td>
                         <td>
                             <!--parte refernte aos botões -->                
-                            <button type="submit" name="action" class="btn btn-info" value="add" id="add">Guardar</button>  
-                            <button type="reset" name="action" class="btn btn-success" value="cancel">Cancelar</button>  
+                            <button type="submit" name="action" class="btn btn-primary" value="add" id="add">Guardar</button>  
+                            <button type="reset" name="action" class="btn btn-default" value="cancel">Cancelar</button>  
                         </td>
                     </tr>
                 </table>
             </form:form>
         </div><%--2º container --%>  
 
-
-        <%-- Le javascript
-       ================================================== --%>
-        <%-- Placed at the end of the document so the pages load faster --%>
-        <script src="/resources/js/jquery.js"></script>
-        <script src="/resources/js/bootstrap.min.js"></script>
-
     </body>
+
 </html>

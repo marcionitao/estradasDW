@@ -81,9 +81,9 @@
                             <div class="tab-content">
                                  <%--Caixa que surgirão apos o item de menu ser seleccionado--%>
                                 <div class="tab-pane fade in active" id="DW" >
-                                    <h4 style="color:#5DAAEF">Data Warehouse</h4>
+                                    <h4 style="color:#0072BB">Data Warehouse</h4>
                                     <p>O Data Warehouse das Estradas de Portugal, S.A. pretende ser uma plataforma que centraliza, por área, dados operacionais. Aplicando as melhores práticas conhecidas na indústria, recolhe, valida, uniformiza, agrega e disponibiliza informação sob vários formatos. O produto final será informação estratégica de qualidade.</p>
-                                    <p><a href="#" class="btn btn-default btn-small" style="color:#0072BB">Saber mais &raquo;</a></p>
+                                    <p><a href="#" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>
                                 </div>
                               
                                 <div class="tab-pane fade" id="SCRAP">              
@@ -122,9 +122,9 @@
                               <%--Inicio da caixa de informações dos botões--%>
                                 <c:forEach items="${menuList}" var="menu">
                                     <div class="tab-pane fade" id="${menu.id_menu}">
-                                        <h4 style="color:#5DAAEF">${menu.item_menu}</h4>
+                                        <h4 style="color:#0072BB">${menu.item_menu}</h4>
                                         <p>${menu.descricao_menu}.</p>
-                                        <p><a href="${menu.url}" class="btn btn-default btn-small" style="color:#0072BB">Saber mais &raquo;</a></p>
+                                        <p><a href="${menu.url}" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>
                                     </div>           
                                 </c:forEach>
 

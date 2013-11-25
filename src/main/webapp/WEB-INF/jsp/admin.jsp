@@ -66,7 +66,7 @@
                             </a>
                             <h5 style="text-align:center;">Menu</h5>
                         </li>
-                         <li >
+                        <li >
                             <a href="#" class="thumbnail">
                                 <img src="/resources/img/news.png" alt="Noticias" title="Noticias">
                             </a>
@@ -75,15 +75,15 @@
                     </ul>
                 </div>
                 <%--fim 1º bloco de opção--%>
-                
+
 
             </div><%--row--%>
         </div><%--2º container --%>  
         <%-- Le javascript
        ================================================== --%>
-        <%-- Placed at the end of the document so the pages load faster --%>
+        <%-- Placed at the end of the document so the pages load faster 
         <script src="/resources/js/jquery.js"></script>
         <script src="/resources/js/bootstrap.min.js"></script>
-
+        --%>
     </body>
 </html>
