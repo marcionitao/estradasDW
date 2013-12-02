@@ -12,7 +12,7 @@
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-        <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
+        <%--<script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>--%>
 
     </head>
 
@@ -82,8 +82,8 @@
         <%-- Le javascript
        ================================================== --%>
         <%-- Placed at the end of the document so the pages load faster 
-        <script src="/resources/js/jquery.js"></script>
+        <script src="/resources/js/jquery.js"></script>--%>
         <script src="/resources/js/bootstrap.min.js"></script>
-        --%>
+        
     </body>
 </html>

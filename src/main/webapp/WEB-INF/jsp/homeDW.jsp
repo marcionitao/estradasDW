@@ -13,7 +13,23 @@
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-        <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
+        
+  
+       <%--Este conjunto de código pertencem a caixa de noticias, plugin Jquery "fancybox"--%> 
+       <script type="text/javascript">
+           $(document).ready(function() {
+               
+               $('.fancybox').fancybox();
+               
+           });
+       </script>
+       
+       <style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+	</style>
         
     </head>
 
@@ -187,39 +203,39 @@
                 <div class="span6">
                     <h4>DW - NOTICIAS</h4>
                     <table class="table table-striped table-bordered">
-                        <tbody>
+                        <tbody>                      
                             <tr>
-                                <td>Noticias, sobre Eventos EP</td>
-                            </tr>
-                            <tr>
-                                <td>Noticias, sobre Formação EP</td>
-                            </tr>
-                            <tr>
-                                <td>Noticias, sobre Tráfego EP</td>
-                            </tr>
-                            <tr>
-                                <td>Noticias, sobre Oprtunidades de Negocio EP</td>
+                                <td><a class="fancybox" href="#in" title="Loreminnn ipsum dolor sit amet">Noticias, sobre Oprtunidades de Negocio EP</a></td>
                             </tr>
                         </tbody>
                     </table>
+                   
                 </div>
             </div>
              <%--Inicio do Bloco de Noticias--%>
             <hr>
 
+            
+            
             <footer>
                 <p> Copyright &copy; 2013 Estradas de Portugal, S.A.</p>
             </footer>
 
         </div>  <%-- /container --%>
         
+          <%--Informações da Caixa de noticias--%>
+        <div id="in" style="width:400px;display: none;">
+             
+            <h3>Noticias, sobre Oprtunidades de Negocio EP</h3>
+                             
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien. Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium varius, cursus ac tortor. Vivamus fringilla congue laoreet. Quisque ultrices sodales orci, quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel, iaculis sed magna. Aenean tempus lacus vitae orci posuere porttitor eget non felis. Donec lectus elit, aliquam nec eleifend sit amet, vestibulum sed nunc.</p>
+        </div>
    
         
 
-         <%-- Le javascript
+         <%-- É importante que esteja para a animação do menu
         ================================================== --%>
-         <%-- Placed at the end of the document so the pages load faster --%>
-        <script src="/resources/js/jquery.js"></script>
+         <%-- Placed at the end of the document so the pages load faster--%>
         <script src="/resources/js/bootstrap.min.js"></script>
 
          <%--Esta funcão determina que, ao passar o mouse por cima da TAB, o conteudo muda, se apagar, volta ao normal ou seja, tem que se clicar para alterar o conteudo--%>
@@ -252,7 +268,8 @@
             });
 
 
-        </script>
-
+        </script>     
+      
     </body>
+    
 </html>
