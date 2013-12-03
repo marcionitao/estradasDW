@@ -26,7 +26,7 @@
        
        <style type="text/css">
 		.fancybox-custom .fancybox-skin {
-			box-shadow: 0 0 50px #222;
+			box-shadow: 0 0 30px #222;
 		}
 
 	</style>

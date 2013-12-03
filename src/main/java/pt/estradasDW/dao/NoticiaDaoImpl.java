@@ -1,5 +1,5 @@
 /*
- * A classe MenuDaoImpl implementa a interface de acesso a dados MenuDAO 
+ * A classe NoticiaDaoImpl implementa a interface de acesso a dados MenuDAO 
  * que define métodos como list() , Add() , Delete(), Edit(), etc, para acessar 
  * os dados do banco de dados.
  */
@@ -10,48 +10,48 @@ import javax.management.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import pt.estradasDW.model.Menu;
+import pt.estradasDW.model.Noticia;
 
 @Repository
-public class MenuDaoImpl implements MenuDao {
+public class NoticiaDaoImpl implements NoticiaDao {
 
     // Isto é usado para que haja um fio automatico de dependência do MenuDaoImpl na SessionFactory.
     @Autowired 
     private SessionFactory session;
     
     @Override
-    public void addMenu(Menu menu) {
-           session.getCurrentSession().save(menu);         
+    public void addNoticia(Noticia noticia) {
+           session.getCurrentSession().save(noticia);         
     }
     
     @Override
-    public void editMenu(Menu menu) {
-          session.getCurrentSession().update(menu);
+    public void editNoticia(Noticia noticia) {
+          session.getCurrentSession().update(noticia);
     }
 
     @Override
-    public void deleteMenu(int id_menu) {
-         session.getCurrentSession().delete(getMenu(id_menu));
+    public void deleteNoticia(int id_noticia) {
+         session.getCurrentSession().delete(getNoticia(id_noticia));
     }
     
     @Override
-    public Menu getMenu(int id_menu) {      
-         return (Menu)session.getCurrentSession().get(Menu.class, id_menu);
+    public Noticia getNoticia(int id_noticia) {      
+         return (Noticia)session.getCurrentSession().get(Noticia.class, id_noticia);
     }   
     
     @Override 
-    public List getAllMenu() {
+    public List getAllNoticia() {
         //faz uma query a tabela Menu e ordena por ordem de inclusão, e devolve uma lista
-        return session.getCurrentSession().createQuery("from Menu").list();
+        return session.getCurrentSession().createQuery("from Noticia").list();
     }
     
     //Metodo irá garantir o minimo e o máximo de itens do menu
     @Override 
-    public List listMenu() {
-        String hql = "FROM Menu";
+    public List listNoticia() {
+        String hql = "FROM Noticia";
         org.hibernate.Query query = session.getCurrentSession().createQuery(hql);
-        query.setFirstResult(0);
-        query.setMaxResults(5);
+        query.setFirstResult(1);
+        query.setMaxResults(6);
         List results = query.list();
         return results;
     }

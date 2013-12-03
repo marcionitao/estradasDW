@@ -19,7 +19,7 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET, value = "/homedw")
     public String showHome(Map<String, Object> map) {
 
-        map.put("menuList", menuService.getAllMenu());
+        map.put("menuList", menuService.listMenu());
 
         return "homeDW";
     }

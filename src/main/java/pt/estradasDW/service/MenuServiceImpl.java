@@ -42,4 +42,9 @@ public class MenuServiceImpl implements MenuService {
     public List getAllMenu() {
         return menuDao.getAllMenu();
     }
+    
+    @Transactional
+    public List listMenu() {
+        return menuDao.listMenu();
+    }
 }

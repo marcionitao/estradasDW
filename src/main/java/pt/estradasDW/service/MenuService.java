@@ -22,4 +22,6 @@ public interface MenuService {
 
     public List getAllMenu();
     
+    public List listMenu();
+        
 }
