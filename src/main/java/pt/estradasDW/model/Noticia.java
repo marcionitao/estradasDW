@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity //informa ao Hibernate que esta classe representa um objeto que pode persistir.
-@Table(name="NOTICIAS")
+@Table(name="noticias")
 public class Noticia implements Serializable{
     
     @Id
