@@ -79,7 +79,7 @@
 
                     <tr>
                         <td class="control-group"><strong for="url"/>URL</td>
-                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 25px;" name="url" id="url"/></td>
+                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 30px;" name="url" id="url"/></td>
                     </tr>
                     <tr>
                         <td>

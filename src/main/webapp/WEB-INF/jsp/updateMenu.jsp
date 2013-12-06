@@ -73,7 +73,7 @@
                     </tr>
                     <tr>
                         <td width="120px" class="control-group"><strong for="item_menu"/>Item</td>
-                        <td class="control-group"><form:input path="item_menu" class="input-xxlarge" style="height: 25px;" name="item_menu" id="item_menu"/></td>
+                        <td class="control-group"><form:input path="item_menu" class="input-xxlarge" style="height: 30px;" name="item_menu" id="item_menu"/></td>
                     </tr>
                     <tr>
                         <td valign=top class="control-group"><strong for="descricao_menu"/>Descrição</td>
@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <td class="control-group"><strong for="url"/>URL</td>
-                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 25px;" name="url" id="url"/></td>
+                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 30px;" name="url" id="url"/></td>
                     </tr>
                     <tr>
                         <td>

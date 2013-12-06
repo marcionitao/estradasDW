@@ -16,6 +16,21 @@
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
         <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
 
+        <%-- Script para confirmar se o item da lista é eliminado ou não--%>
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+            
+                $("#del").click(function(){
+                
+                    return confirm("Tem a certeza de que deseja eliminar este item?");
+                
+                });
+            
+            });
+        
+        </script>
+
     </head>
 
     <body>
@@ -95,7 +110,7 @@
                         <form:form action="${url_2}/delete" method="DELETE">
 
                             <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
-                            <td><a href="<c:url value="${url_2}"/>/delete.html"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
+                            <td><a href="<c:url value="${url_2}"/>/delete.html" id="del"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
                                 </form:form> 
 
                     </tr>
@@ -112,4 +127,5 @@
         <script src="/resources/js/bootstrap.min.js"></script>
 
     </body>
+
 </html>

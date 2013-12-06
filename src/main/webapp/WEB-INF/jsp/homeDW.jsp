@@ -50,12 +50,13 @@
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" id="diversos">Diversos</a>
                         </ul>
-                        <%--Define os campos para user e passwor com botão--%>
+                        <%--Define os campos para user e passwor com botão
                         <form class="navbar-form pull-right">
                             <input class="span2" type="text" placeholder="Utilizador">
                             <input class="span2" type="password" placeholder="Password">
                             <button type="submit" class="btn">Login</button>
                         </form>
+                        --%>
                     </div> <%--/.nav-collapse --%>
                 </div> <%--/.container --%>
             </div> <%--/.nav-inner --%>
@@ -205,8 +206,8 @@
                         <c:forEach items="${noticiaList}" var="noticia">
                             <tr>
                                 <%--O nº 1 foi incrementado em "href", para não fazer conflito com os menus--%>
-                                <td><a class="fancybox" href="#1${noticia.id_noticia}" title="${noticia.titulo_noticia}">${noticia.titulo_noticia}</a></td>
-                                <td>${noticia.data_noticia}</td>
+                                <td style="font-size:13px"><a class="fancybox" href="#p${noticia.id_noticia}">${noticia.titulo_noticia}</a></td>
+                                <td style="font-size:13px">${noticia.data_noticia}</td>
                             </tr>  
                         </c:forEach>
                     </table>
@@ -225,7 +226,7 @@
         <%--Informações da Caixa de noticias--%>
         <c:forEach items="${noticiaList}" var="noticia">
             <%--O nº 1 foi incrementado em "id", para não fazer conflito com os menus--%>
-            <div id="1${noticia.id_noticia}" style="width:500px;display: none;">
+            <div id="p${noticia.id_noticia}" style="width:500px;display: none;">
 
                 <h4>${noticia.titulo_noticia}</h4>
                 <h6>${noticia.data_noticia}</h6>
