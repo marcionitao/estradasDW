@@ -71,7 +71,7 @@ public class MenuController {
 
     //metodo para eliminar o item de menu
     @RequestMapping(value = "/homedw/admin/deleteItem/{id}/delete")
-    public String deleteReceita(@PathVariable("id") int idMenu) {
+    public String deleteMenu(@PathVariable("id") int idMenu) {
         //chama o metodo e passa o valor do id do registo a ser eliminado
         menuService.deleteMenu(idMenu);
 

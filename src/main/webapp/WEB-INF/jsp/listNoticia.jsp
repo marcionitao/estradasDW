@@ -15,6 +15,18 @@
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
         <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery-latest.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.tablesorter.js"></script>
+        
+        <script type="text/javascript">
+            
+            $(document).ready(function() 
+            { 
+                $("#myTable").tablesorter(); 
+            } 
+        ); 
+            
+        </script>
 
     </head>
 
@@ -66,23 +78,26 @@
 
         <div class="table-responsive"><%-- 2º container --%>  
 
-            <table class="table table-bordered" align="center" style="width: 65%;">
-                <tr class="info">
+            <table id="myTable" class="tablesorter" align="center" style="width: 65%">
+                
+                <thead>
+                <tr>
 
-                    <td width="10px"><strong>Id</strong></td>
-                    <td><strong>Titulo da noticia</strong></td>
-                    <td><strong>Data</strong></td>
-                    <td width="10px"><strong>Ação</strong></td>
+                    <th><strong>Id</strong></th>
+                    <th><strong>Titulo da noticia</strong></th>
+                    <th><strong>Data</strong></td>
+                    <th><strong>Ação</strong></th>
 
                 </tr>
-
+                </thead>
+                <tbody>
                 <!--parte refernte a listagem-->
                 <c:forEach items="${noticiaList}" var="noticia">
                     <%--criamos uma variavel para conter o caminho que pretendemos--%>
                     <c:url var="url" value="/homedw/admin/editNoticia/${noticia.id_noticia}" />   
                     <c:url var="url_2" value="/homedw/admin/deleteNoticia/${noticia.id_noticia}" />   
-
-                    <tr class="warning">
+                    
+                    <tr>
 
                         <%--url refere-se ao conteudo do id receitas, é uma variavel antes da listagem --%>
                         <form:form action="${url}/edit" method="GET">
@@ -98,14 +113,62 @@
 
                             <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
                             <td><a href="<c:url value="${url_2}"/>/delete.html"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>
-                                </form:form> 
+                        </form:form> 
 
                     </tr>
+                   
 
                 </c:forEach>
+                     </tbody>
             </table>
 
         </div> <%-- 2º container --%>  
+        
+         <%--   
+        <table id="myTable" class="tablesorter"> 
+            <thead> 
+                <tr> 
+                    <th>Last Name</th> 
+                    <th>First Name</th> 
+                    <th>Email</th> 
+                    <th>Due</th> 
+                    <th>Web Site</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr> 
+                    <td>Smith</td> 
+                    <td>John</td> 
+                    <td>jsmith@gmail.com</td> 
+                    <td>$50.00</td> 
+                    <td>http://www.jsmith.com</td> 
+                </tr> 
+                <tr> 
+                    <td>Bach</td> 
+                    <td>Frank</td> 
+                    <td>fbach@yahoo.com</td> 
+                    <td>$50.00</td> 
+                    <td>http://www.frank.com</td> 
+                </tr> 
+                <tr> 
+                    <td>Doe</td> 
+                    <td>Jason</td> 
+                    <td>jdoe@hotmail.com</td> 
+                    <td>$100.00</td> 
+                    <td>http://www.jdoe.com</td> 
+                </tr> 
+                <tr> 
+                    <td>Conway</td> 
+                    <td>Tim</td> 
+                    <td>tconway@earthlink.net</td> 
+                    <td>$50.00</td> 
+                    <td>http://www.timconway.com</td> 
+                </tr> 
+            </tbody> 
+        </table> 
+        
+        --%>  
+        
 
         <%-- Le javascript
        ================================================== --%>

@@ -45,7 +45,7 @@
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin/listMenu.html" class="thumbnail">
+                        <a href="/homedw/admin/listNoticia.html" class="thumbnail">
                             <img src="/resources/img/list.png" alt="list" title="Listar Itens">
                         </a>
                     </div>

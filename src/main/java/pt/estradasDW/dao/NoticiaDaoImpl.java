@@ -45,10 +45,10 @@ public class NoticiaDaoImpl implements NoticiaDao {
         return session.getCurrentSession().createQuery("from Noticia").list();
     }
     
-    //Metodo irá garantir o minimo e o máximo de itens do menu
+    //Metodo irá garantir o minimo e o máximo de noticias
     @Override 
     public List listNoticia() {
-        String hql = "from Noticia";
+        String hql = "from Noticia order by data_noticia desc";
         org.hibernate.Query query = session.getCurrentSession().createQuery(hql);
         query.setFirstResult(0);
         query.setMaxResults(5);
