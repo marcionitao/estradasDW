@@ -13,7 +13,7 @@
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-     
+
     </head>
 
     <body>
@@ -37,7 +37,7 @@
                 <div class="row"> 
                     <%--inicio bloco contem o titulo e botões de acesso as paginas--%>
                     <div class="span9" > 
-                        <h3 style="color:#0072BB;"align="left">DW - Novo item de Menu</h3>
+                        <h3 style="color:#0072BB;"align="left">DW - Nova Noticia</h3>
                     </div>
                     <div class="span1" >   
                         <a href="/homedw.html" class="thumbnail">
@@ -45,8 +45,8 @@
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin/listMenu.html" class="thumbnail">
-                            <img src="/resources/img/list.png" alt="list" title="Listar Itens">
+                        <a href="/homedw/admin/listNoticia.html" class="thumbnail">
+                            <img src="/resources/img/list.png" alt="list" title="Listar Noticias">
                         </a>
                     </div>
                     <div class="span1" >   
@@ -64,23 +64,20 @@
 
         <div class="container"><%-- 2º container --%>  
 
-            <form:form action="/homedw/admin/listMenu.html" method="POST" commandName="menu" id="contact-form">
+            <form:form action="/homedw/admin/listNoticia.html" method="POST" commandName="noticia" id="contact-form">
                 <table width=80% align="right">
 
                     <tr>
-                        <td width="120px" class="control-group"><strong for="item_menu"/>Item</td>
-                        <td class="control-group"><form:input path="item_menu" class="input-xxlarge"  style="height: 30px;" autofocus="autofocus" name="item_menu" id="item_menu"/></td>
+                        <td width="150px" class="control-group"><strong for="titulo_noticia"/>Titulo da Noticia</td>
+                        <td class="control-group"><form:input path="titulo_noticia" class="input-xxlarge"  style="height: 30px;" autofocus="autofocus" name="titulo_noticia" id="titulo_noticia"/></td>
                     </tr>
 
                     <tr>
-                        <td valign=top class="control-group"><strong for="descricao_menu"/>Descrição</td>
-                        <td class="control-group"><form:textarea path="descricao_menu" class="input-xxlarge" rows="5" name="descricao_menu" id="descricao_menu"/></td>
+                        <td valign=top class="control-group"><strong for="descricao_noticia"/>Descrição</td>
+                        <td class="control-group"><form:textarea path="descricao_noticia" class="input-xxlarge" rows="9" name="descricao_noticia" id="descricao_noticia"/></td>
                     </tr>
 
-                    <tr>
-                        <td class="control-group"><strong for="url"/>URL</td>
-                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 25px;" name="url" id="url"/></td>
-                    </tr>
+                  
                     <tr>
                         <td>
                         <td>

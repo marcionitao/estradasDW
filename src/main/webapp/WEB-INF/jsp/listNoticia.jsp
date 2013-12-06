@@ -39,7 +39,7 @@
                 <div class="row"> 
                     <%--inicio bloco contem o titulo e botões de acesso as paginas--%>
                     <div class="span9" > 
-                        <h3 style="color:#0072BB;"align="left">DW - Gestão dos Menus</h3>
+                        <h3 style="color:#0072BB;"align="left">DW - Gestão das Noticias</h3>
                     </div>
                     <div class="span1" >   
                         <a href="/homedw.html" class="thumbnail">
@@ -47,7 +47,7 @@
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin/novoItem.html" class="thumbnail">
+                        <a href="/homedw/admin/novaNoticia.html" class="thumbnail">
                             <img src="/resources/img/add.png" alt="add" title="Novo Item">
                         </a>
                     </div>
@@ -66,20 +66,21 @@
 
         <div class="table-responsive"><%-- 2º container --%>  
 
-            <table class="table table-bordered" align="center" style="width: 50%;">
+            <table class="table table-bordered" align="center" style="width: 65%;">
                 <tr class="info">
 
                     <td width="10px"><strong>Id</strong></td>
-                    <td><strong>Item Menu</strong></td>
+                    <td><strong>Titulo da noticia</strong></td>
+                    <td><strong>Data</strong></td>
                     <td width="10px"><strong>Ação</strong></td>
 
                 </tr>
 
                 <!--parte refernte a listagem-->
-                <c:forEach items="${menuList}" var="menu">
+                <c:forEach items="${noticiaList}" var="noticia">
                     <%--criamos uma variavel para conter o caminho que pretendemos--%>
-                    <c:url var="url" value="/homedw/admin/editItem/${menu.id_menu}" />   
-                    <c:url var="url_2" value="/homedw/admin/deleteItem/${menu.id_menu}" />   
+                    <c:url var="url" value="/homedw/admin/editNoticia/${noticia.id_noticia}" />   
+                    <c:url var="url_2" value="/homedw/admin/deleteNoticia/${noticia.id_noticia}" />   
 
                     <tr class="warning">
 
@@ -87,15 +88,16 @@
                         <form:form action="${url}/edit" method="GET">
 
                             <%--aqui, definimos que será mostrado o id e o titulo da receita, mas apenas o titulo é clicavel --%>
-                            <td>${menu.id_menu}</td>
-                            <td><a href="<c:url value="${url}"/>/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
+                            <td>${noticia.id_noticia}</td>
+                            <td><a href="<c:url value="${url}"/>/edit.html" title="Mostrar Noticia">${noticia.titulo_noticia}</a></td>
+                            <td>${noticia.data_noticia}</td>
                         </form:form>
 
                         <%--url refere-se ao botão para eliminar receita --%>
                         <form:form action="${url_2}/delete" method="DELETE">
 
                             <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
-                            <td><a href="<c:url value="${url_2}"/>/delete.html"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
+                            <td><a href="<c:url value="${url_2}"/>/delete.html"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>
                                 </form:form> 
 
                     </tr>

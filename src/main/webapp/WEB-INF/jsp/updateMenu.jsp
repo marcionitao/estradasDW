@@ -6,14 +6,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>DW-Admin, Menus</title>
+        <title>DW-Administração</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-
+       
     </head>
 
     <body>
@@ -69,7 +69,7 @@
 
                     <tr>
                         <td width="120px"><strong/>ID</td>
-                        <td><form:input path="id_menu" class="input-small" style="height: 25px;" readonly = "true" id="id_menu"/></td>
+                        <td><form:input path="id_menu" class="input-small" style="height: 30px;" readonly = "true" id="id_menu"/></td>
                     </tr>
                     <tr>
                         <td width="120px" class="control-group"><strong for="item_menu"/>Item</td>

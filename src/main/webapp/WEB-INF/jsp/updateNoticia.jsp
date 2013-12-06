@@ -13,7 +13,7 @@
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-     
+             
     </head>
 
     <body>
@@ -37,7 +37,7 @@
                 <div class="row"> 
                     <%--inicio bloco contem o titulo e botões de acesso as paginas--%>
                     <div class="span9" > 
-                        <h3 style="color:#0072BB;"align="left">DW - Novo item de Menu</h3>
+                        <h3 style="color:#0072BB;"align="left">DW - Editar Noticia</h3>
                     </div>
                     <div class="span1" >   
                         <a href="/homedw.html" class="thumbnail">
@@ -64,29 +64,31 @@
 
         <div class="container"><%-- 2º container --%>  
 
-            <form:form action="/homedw/admin/listMenu.html" method="POST" commandName="menu" id="contact-form">
+            <form:form action="/homedw/admin/editNoticia/${id_noticia}" method="PUT" commandName="noticia" id="contact-form">
                 <table width=80% align="right">
 
                     <tr>
-                        <td width="120px" class="control-group"><strong for="item_menu"/>Item</td>
-                        <td class="control-group"><form:input path="item_menu" class="input-xxlarge"  style="height: 30px;" autofocus="autofocus" name="item_menu" id="item_menu"/></td>
+                        <td width="150px"><strong/>ID</td>
+                        <td><form:input path="id_noticia" class="input-small" style="height: 30px;" readonly = "true" id="id_noticia"/></td>
                     </tr>
-
                     <tr>
-                        <td valign=top class="control-group"><strong for="descricao_menu"/>Descrição</td>
-                        <td class="control-group"><form:textarea path="descricao_menu" class="input-xxlarge" rows="5" name="descricao_menu" id="descricao_menu"/></td>
+                        <td width="120px" class="control-group"><strong for="titulo_noticia"/>Titulo da Noticia</td>
+                        <td class="control-group"><form:input path="titulo_noticia" class="input-xxlarge" style="height: 30px;" name="titulo_noticia" id="titulo_noticia"/></td>
                     </tr>
-
                     <tr>
-                        <td class="control-group"><strong for="url"/>URL</td>
-                        <td class="control-group"><form:input path="url" class="input-xxlarge" style="height: 25px;" name="url" id="url"/></td>
+                        <td valign=top class="control-group"><strong for="descricao_noticia"/>Descrição</td>
+                        <td class="control-group"><form:textarea path="descricao_noticia" class="input-xxlarge"  rows="9" name="descricao_noticia" id="descricao_noticia"/></td>
+                    </tr>
+                    <tr>
+                        <td><strong for="data_noticia"/>Data</td>
+                        <td><form:input path="data_noticia" class="input-small" style="height: 30px;" readonly = "true" name="data_noticia" id="data_noticia"/></td>
                     </tr>
                     <tr>
                         <td>
                         <td>
                             <!--parte refernte aos botões -->                
-                            <button type="submit" name="action" class="btn btn-primary" value="add" id="add">Guardar</button>  
-                            <button type="reset" name="action" class="btn btn-default" value="cancel">Cancelar</button>  
+                            <button type="submit" name="action" class="btn btn-primary" value="edit" id="edita">Guardar</button>  
+                            <%-- <button type="reset" name="action" class="btn btn-success" value="cancel">Cancelar</button>  --%>
                         </td>
                     </tr>
                 </table>
@@ -94,5 +96,4 @@
         </div><%--2º container --%>  
 
     </body>
-
 </html>

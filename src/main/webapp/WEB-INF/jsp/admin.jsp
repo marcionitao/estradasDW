@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>DW-Admin, Estradas de Portugal, S.A.</title>
+        <title>DW-Administração</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -67,7 +67,7 @@
                             <h5 style="text-align:center;">Menu</h5>
                         </li>
                         <li >
-                            <a href="#" class="thumbnail">
+                            <a href="/homedw/admin/listNoticia.html" class="thumbnail">
                                 <img src="/resources/img/news.png" alt="Noticias" title="Noticias">
                             </a>
                             <h5 style="text-align:center;">Noticias</h5>

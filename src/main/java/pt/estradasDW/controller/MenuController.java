@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.*;
 import pt.estradasDW.model.Menu;
 
 import pt.estradasDW.service.MenuService;
+import pt.estradasDW.service.NoticiaService;
 
 @Controller
-public class AdminController {
+public class MenuController {
 
     @Autowired
     private MenuService menuService;
-
+    
     //metodo para listar os itens de menu
     @RequestMapping(value = "/homedw/admin/listMenu", method = RequestMethod.GET)
     public String listMenu(Map<String, Object> map) {
@@ -68,7 +69,7 @@ public class AdminController {
         return "redirect:/homedw/admin/listMenu.html";
     }
 
-    //metodo para eliminar a receita
+    //metodo para eliminar o item de menu
     @RequestMapping(value = "/homedw/admin/deleteItem/{id}/delete")
     public String deleteReceita(@PathVariable("id") int idMenu) {
         //chama o metodo e passa o valor do id do registo a ser eliminado
@@ -77,4 +78,5 @@ public class AdminController {
         //após eliminar ele redireciona para o listar itensdo menu
         return "redirect:/homedw/admin/listMenu.html";
     }
+   
 }
