@@ -22,7 +22,7 @@ public class MenuController {
     private MenuService menuService;
     
     //metodo para listar os itens de menu
-    @RequestMapping(value = "/homedw/admin/listMenu", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/listMenu", method = RequestMethod.GET)
     public String listMenu(Map<String, Object> map) {
 
         map.put("menuList", menuService.getAllMenu());
@@ -31,7 +31,7 @@ public class MenuController {
     }
 
     //metodo que cria o fomulario para criar os itens de menu
-    @RequestMapping(value= "/homedw/admin/novoItem", method = RequestMethod.GET)
+    @RequestMapping(value= "/admin/novoItem", method = RequestMethod.GET)
     public String form(ModelMap map) {
 
         Menu menu = new Menu();
@@ -42,16 +42,17 @@ public class MenuController {
     }
   
     //metodo que grava no DB o fomulario de criar itens
-    @RequestMapping(value= "/homedw/admin/listMenu", method = RequestMethod.POST)
+    @RequestMapping(value= "/admin/listMenu", method = RequestMethod.POST)
     public String doActions(@ModelAttribute("menu") Menu menu) {
                
         menuService.addMenu(menu);
      
-        return "redirect:/homedw/admin/listMenu.html";
+        //return "redirect:/homedw/admin/listMenu.html";
+         return "redirect:/admin/listMenu";
     }
     
     //metodo que traz o conteudo do item que se pretende editar
-    @RequestMapping(value = "/homedw/admin/editItem/{id}/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/editItem/{id}/edit", method = RequestMethod.GET)
     public String editForm(@PathVariable("id") int idMenu, ModelMap map) {
 
         Menu menu = menuService.getMenu(idMenu);
@@ -66,17 +67,19 @@ public class MenuController {
 
         menuService.editMenu(menu);
 
-        return "redirect:/homedw/admin/listMenu.html";
+        //return "redirect:/homedw/admin/listMenu.html";
+        return "redirect:/admin/listMenu";
     }
 
     //metodo para eliminar o item de menu
-    @RequestMapping(value = "/homedw/admin/deleteItem/{id}/delete")
+    @RequestMapping(value = "/admin/deleteItem/{id}/delete")
     public String deleteMenu(@PathVariable("id") int idMenu) {
         //chama o metodo e passa o valor do id do registo a ser eliminado
         menuService.deleteMenu(idMenu);
 
         //após eliminar ele redireciona para o listar itensdo menu
-        return "redirect:/homedw/admin/listMenu.html";
+        //return "redirect:/homedw/admin/listMenu.html";
+        return "redirect:/admin/listMenu";
     }
    
 }

@@ -23,7 +23,7 @@ public class NoticiaController {
     private NoticiaService noticiaService;
     
     //metodo para listar todas as noticias
-    @RequestMapping(value = "/homedw/admin/listNoticia", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/listNoticia", method = RequestMethod.GET)
     public String listNoticia(Map<String, Object> map) {
 
         map.put("noticiaList", noticiaService.getAllNoticia());
@@ -32,7 +32,7 @@ public class NoticiaController {
     }
     
     //metodo que cria o fomulario para criar a noticia
-    @RequestMapping(value= "/homedw/admin/novaNoticia", method = RequestMethod.GET)
+    @RequestMapping(value= "/admin/novaNoticia", method = RequestMethod.GET)
     public String form(ModelMap map) {
         
         Noticia noticia = new Noticia();
@@ -43,16 +43,17 @@ public class NoticiaController {
     }
   
     //metodo que grava no DB o fomulario de criar noticia
-    @RequestMapping(value= "/homedw/admin/listNoticia", method = RequestMethod.POST)
+    @RequestMapping(value= "/admin/listNoticia", method = RequestMethod.POST)
     public String doActions(@ModelAttribute("noticia") Noticia noticia) {
                
         noticiaService.addNoticia(noticia);
      
-        return "redirect:/homedw/admin/listNoticia.html";
+        //return "redirect:/homedw/admin/listNoticia.html";
+        return "redirect:/admin/listNoticia";
     }
     
      //metodo que traz o conteudo da noticia que se pretende editar
-    @RequestMapping(value = "/homedw/admin/editNoticia/{id}/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/editNoticia/{id}/edit", method = RequestMethod.GET)
     public String editForm(@PathVariable("id") int idNoticia, ModelMap map) {
 
         Noticia noticia = noticiaService.getNoticia(idNoticia);
@@ -67,17 +68,19 @@ public class NoticiaController {
 
         noticiaService.editNoticia(noticia);
 
-        return "redirect:/homedw/admin/listNoticia.html";
+        //return "redirect:/homedw/admin/listNoticia.html";
+        return "redirect:/admin/listNoticia";
     }
     
      //metodo para eliminar a noticia
-    @RequestMapping(value = "/homedw/admin/deleteNoticia/{id}/delete")
+    @RequestMapping(value = "/admin/deleteNoticia/{id}/delete")
     public String deleteNoticia(@PathVariable("id") int idNoticia) {
         //chama o metodo e passa o valor do id do registo a ser eliminado
         noticiaService.deleteNoticia(idNoticia);
 
         //após eliminar ele redireciona para o listar itensdo menu
-        return "redirect:/homedw/admin/listNoticia.html";
+        //return "redirect:/homedw/admin/listNoticia.html";
+        return "redirect:/admin/listNoticia";
     }
     
 }

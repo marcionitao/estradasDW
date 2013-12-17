@@ -40,18 +40,24 @@
                         <h3 style="color:#0072BB;"align="left">DW - Nova Noticia</h3>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw.html" class="thumbnail">
-                            <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">
+                      <%--  <a href="/homedw.html" class="thumbnail">--%>
+                        <a href="/" class="thumbnail">
+                            <img src="<c:url value="/resources/img/home_peq.png"/> " alt="Home" title="Home">   
+                            <%--<img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin/listNoticia.html" class="thumbnail">
-                            <img src="/resources/img/list.png" alt="list" title="Listar Noticias">
+                        <%--<a href="/homedw/admin/listNoticia.html" class="thumbnail">--%>
+                        <a href="/admin/listNoticia" class="thumbnail">
+                            <img src="<c:url value="/resources/img/list.png"/> " alt="list" title="Listar Noticias">  
+                           <%-- <img src="/resources/img/list.png" alt="list" title="Listar Noticias">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin.html" class="thumbnail">
-                            <img src="/resources/img/admin.png" alt="Admin" title="Administração">
+                       <%-- <a href="/homedw/admin.html" class="thumbnail">--%>
+                        <a href="/admin" class="thumbnail">
+                            <img src="<c:url value="/resources/img/admin.png"/> " alt="Admin" title="Administração"> 
+                            <%--<img src="/resources/img/admin.png" alt="Admin" title="Administração">--%>
                         </a>
                     </div>
                     <%--fim bloco contem o titulo e botões de acesso as paginas--%>
@@ -64,7 +70,8 @@
 
         <div class="container"><%-- 2º container --%>  
 
-            <form:form action="/homedw/admin/listNoticia.html" method="POST" commandName="noticia" id="contact-form">
+            <%--<form:form action="/homedw/admin/listNoticia.html" method="POST" commandName="noticia" id="contact-form">--%>
+            <form:form action="/admin/listNoticia" method="POST" commandName="noticia" id="contact-form">
                 <table width=80% align="right">
 
                     <tr>

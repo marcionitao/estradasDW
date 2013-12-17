@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
- version="2.5">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
  
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -12,18 +12,39 @@
         <servlet-name>estradasDW</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
-              <param-name>contextConfigLocation</param-name>
-              <param-value>/WEB-INF/estradasDW-servlet.xml</param-value>
-          </init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/estradasDW-servlet.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
  
     <servlet-mapping>
         <servlet-name>estradasDW</servlet-name>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping> 
+        <url-pattern>/</url-pattern>
+        <!--<url-pattern>*.html</url-pattern>-->
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.gif</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
     
-     <welcome-file-list>
+    <welcome-file-list>
         <welcome-file>homedw.html</welcome-file>
         <welcome-file>homedw.htm</welcome-file>
         <welcome-file>homedw.jsp</welcome-file>

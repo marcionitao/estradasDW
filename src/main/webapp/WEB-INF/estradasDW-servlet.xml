@@ -25,6 +25,7 @@
     <context:component-scan base-package="pt.estradasDW"/>
          
     <!-- Serve pedidos HTTP GET para /static/** de forma eficiente para recursos estáticos na pasta webapp/resources -->
+    <!--<mvc:resources mapping="/resources/**" location="/resources/" /> -->
     <mvc:resources mapping="/resources/**" location="/resources/" /> 
 		
      <!--propertyConfigurer bean - Este bean é usado para carregar jdbc.properties 

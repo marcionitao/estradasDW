@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=ISO-8859-1" language="java" pageEncoding="UTF-8" import="java.sql.*" errorPage="" %> 
+<%@ page contentType="text/html; charset=ISO-8859-1" language="java" pageEncoding="UTF-8" import="java.sql.*" errorPage="" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -12,8 +12,8 @@
         <meta name="author" content="">
 
         <%-- aqui, chama o ficheiro jsp que contem os comandos para acessar os CSS e JQuery--%>     
-        <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
-
+       <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
+      
         <%--Este conjunto de código pertencem a caixa de noticias, plugin Jquery "fancybox"--%> 
         <script type="text/javascript">
             $(document).ready(function() {
@@ -69,7 +69,9 @@
                 <div class="row"> 
                     <%--inicio bloco contem o logo e nome da empresa EP--%>
                     <div class="span2"> 
-                        <img src="/resources/img/estradasdeportugalkt8.png" alt="">
+                
+                       <%-- <img src="/resources/img/estradasdeportugalkt8.png" alt="">--%>
+                        <img src="<c:url value="/resources/img/estradasdeportugalkt8.png"/> " alt="">
                     </div>
                     <div class="span10" > 
                         <h2 style="color:#66676B;">Data Warehouse EP</h2>
@@ -160,35 +162,43 @@
 
                         <li >
                             <a href="#" class="thumbnail">
-                                <img src="/resources/img/dashbord.png" alt="Dashbord" title="Dashbord">
+                             <%--  <img src="/resources/img/dashbord.png" alt="Dashbord" title="Dashbord">--%>
+                              <img src="<c:url value="/resources/img/dashbord.png"/> " alt="Dashbord" title="Dashbord">
+                             
                             </a>
                             <h5 style="text-align:center;">Dashbord</h5>     
                         </li>
 
                         <li >
                             <a href="#" class="thumbnail">
-                                <img src="/resources/img/relatorio.png" alt="Relatorios" title="Relatorios">
+                             
+                                <img src="<c:url value="/resources/img/relatorio.png"/> " alt="Relatorios" title="Relatorios">
+                                 <%-- <img src="../../resources/img/relatorio.png" alt="Relatorios" title="Relatorios">--%>
                             </a>
                             <h5 style="text-align:center;">Relatorios</h5>
                         </li>
 
                         <li >
                             <a href="#" class="thumbnail">
-                                <img src="/resources/img/contactos.png" alt="Contacto" title="Contactos">
+                                 <img src="<c:url value="/resources/img/contactos.png"/> " alt="Contacto" title="Contacto">
+                             <%--<img src="../../resources/img/contactos.png" alt="Contacto" title="Contactos">--%>
                             </a>
                             <h5 style="text-align:center;">Contactos</h5>
                         </li>
 
                         <li >
                             <a href="#" class="thumbnail">
-                                <img src="/resources/img/sugestao.png" alt="Susgestões" title="Sugestões">
+                        
+                                <img src="<c:url value="/resources/img/sugestao.png"/> " alt="Susgestões" title="Susgestões">
+                               <%-- <img src="../../resources/img/sugestao.png" alt="Susgestões" title="Sugestões">--%>
                             </a>
                             <h5 style="text-align:center;">Sugestões</h5>
                         </li>
 
                         <li >
                             <a href="#" class="thumbnail">
-                                <img src="/resources/img/esclarecimento_2.png" alt="Esclarecimentos" title="Esclarecimentos">
+                                <img src="<c:url value="/resources/img/esclarecimento_2.png"/> " alt="Esclarecimentos" title="Esclarecimentos">                              
+                                <%--<img src="../../resources/img/esclarecimento_2.png" alt="Esclarecimentos" title="Esclarecimentos">--%>
                             </a>
                             <h5 style="text-align:center;">Informações</h5>
                         </li>
@@ -239,6 +249,7 @@
        ================================================== --%>
         <%-- Placed at the end of the document so the pages load faster--%>
         <script src="/resources/js/bootstrap.min.js"></script>
+        <%--<script src="../../resources/js/bootstrap.min.js"></script>--%>
 
         <%--Esta funcão determina que, ao passar o mouse por cima da TAB, o conteudo muda, se apagar, volta ao normal ou seja, tem que se clicar para alterar o conteudo--%>
         <script type="text/javascript">

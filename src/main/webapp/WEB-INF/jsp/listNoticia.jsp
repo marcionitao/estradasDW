@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" language="java" pageEncoding="UTF-8" import="java.sql.*" errorPage="" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
     <head>
@@ -54,18 +53,24 @@
                         <h3 style="color:#0072BB;"align="left">DW - Gestão das Noticias</h3>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw.html" class="thumbnail">
-                            <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">
+                        <%--<a href="/homedw.html" class="thumbnail">--%>
+                        <a href="/" class="thumbnail">
+                            <%--<img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">--%>
+                            <img src="<c:url value="/resources/img/home_peq.png"/> " alt="Home" title="Home">   
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin/novaNoticia.html" class="thumbnail">
-                            <img src="/resources/img/add.png" alt="add" title="Novo Item">
+                        <%--<a href="/homedw/admin/novaNoticia.html" class="thumbnail">--%>
+                        <a href="/admin/novaNoticia" class="thumbnail">
+                            <img src="<c:url value="/resources/img/add.png"/> " alt="add" title="Novo Item"> 
+                           <%-- <img src="/resources/img/add.png" alt="add" title="Novo Item">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                        <a href="/homedw/admin.html" class="thumbnail">
-                            <img src="/resources/img/admin.png" alt="Admin" title="Administração">
+                        <%--<a href="/homedw/admin.html" class="thumbnail">--%>
+                        <a href="/admin" class="thumbnail">
+                            <img src="<c:url value="/resources/img/admin.png"/> " alt="Admin" title="Administração"> 
+                            <%--<img src="/resources/img/admin.png" alt="Admin" title="Administração">--%>
                         </a>
                     </div>
                     <%--fim bloco contem o titulo e botões de acesso as paginas--%>
@@ -94,8 +99,8 @@
                     <!--parte refernte a listagem-->
                     <c:forEach items="${noticiaList}" var="noticia">
                         <%--criamos uma variavel para conter o caminho que pretendemos--%>
-                        <c:url var="url" value="/homedw/admin/editNoticia/${noticia.id_noticia}" />   
-                        <c:url var="url_2" value="/homedw/admin/deleteNoticia/${noticia.id_noticia}" />   
+                        <c:url var="url" value="/admin/editNoticia/${noticia.id_noticia}" />   
+                        <c:url var="url_2" value="/admin/deleteNoticia/${noticia.id_noticia}" />   
 
                         <tr>
 
@@ -112,7 +117,8 @@
                             <form:form action="${url_2}/delete" method="DELETE">
 
                                 <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
-                                <td><a href="<c:url value="${url_2}"/>/delete.html"id="del"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>
+                                <%--<td><a href="<c:url value="${url_2}"/>/delete.html"id="del"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>--%>
+                                <td><a href="<c:url value="${url_2}"/>/delete"id="del"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>
                                     </form:form> 
 
                         </tr>                  
