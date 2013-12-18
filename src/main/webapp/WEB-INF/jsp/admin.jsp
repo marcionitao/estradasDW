@@ -55,23 +55,24 @@
                 <div class="span8 offset4" >
                     <ul class="thumbnails">
                         <li>
-                            <a href="/" class="thumbnail">
+                            <%--<a href="/" class="thumbnail">--%>
+                            <a href="<c:url value="/" />" class="thumbnail">
                                 <img src="<c:url value="/resources/img/home.png"/> " alt="Home" title="Home">                              
                                 <%--<img src="/resources/img/home.png" alt="Home" title="HomeDW">--%>
                             </a>
                             <h5 style="text-align:center;">HomeDW</h5>     
                         </li>
                         <li >
-                           <%-- <a href="/homedw/admin/listMenu.html" class="thumbnail">--%>
-                            <a href="/admin/listMenu" class="thumbnail">
+                           <%-- <a href="/admin/listMenu.html" class="thumbnail">--%>
+                            <a href="<c:url value="/admin/listMenu" />" class="thumbnail">
                                 <img src="<c:url value="/resources/img/menu.png"/> " alt="Menu" title="Menu">   
                                 <%--<img src="/resources/img/menu.png" alt="Menu" title="Menu">--%>
                             </a>
                             <h5 style="text-align:center;">Menu</h5>
                         </li>
                         <li >
-                            <%--<a href="/homedw/admin/listNoticia.html" class="thumbnail">--%>
-                            <a href="/admin/listNoticia" class="thumbnail">
+                            <%--<a href="/admin/listNoticia.html" class="thumbnail">--%>
+                            <a href="<c:url value="/admin/listNoticia" />" class="thumbnail">
                                 <img src="<c:url value="/resources/img/news.png"/> " alt="Noticias" title="Noticias">   
                                 <%--<img src="/resources/img/news.png" alt="Noticias" title="Noticias">--%>
                             </a>

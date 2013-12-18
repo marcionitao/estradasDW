@@ -84,13 +84,15 @@
                             <%--my_nav-tabs é um estido definido em estradas.css--%>
                             <ul class="nav my_nav-tabs" >
                                 <%--menus fixos--%>
-                                <li class="active"><a href="#DW" data-toggle="tab">DW</a></li>
-                                <li><a href="#SCRAP" data-toggle="tab">SCRAP</a></li>
-
+                                <%--<li class="active"><a href="#DW" data-toggle="tab">DW</a></li>--%>
+                                <li class="active"><a href="<c:url value="#DW" />" data-toggle="tab">DW</a></li>   
+                                <%--<li><a href="#SCRAP" data-toggle="tab">SCRAP</a></li>--%>
+                                <li><a href="<c:url value="#SCRAP" />" data-toggle="tab">SCRAP</a></li>  
                                 <%--menus dinamicos--%>
                                 <c:forEach items="${menuList}" var="menu">
 
-                                    <li><a href="#${menu.id_menu}" data-toggle="tab">${menu.item_menu}</a></li>
+                                    <%--<li><a href="#${menu.id_menu}" data-toggle="tab">${menu.item_menu}</a></li>--%>
+                                    <li><a href="<c:url value="#${menu.id_menu}" />" data-toggle="tab">${menu.item_menu}</a></li> 
 
                                 </c:forEach>
                             </ul>
@@ -100,7 +102,8 @@
                                 <div class="tab-pane fade in active" id="DW" >
                                     <h4 style="color:#0072BB">Data Warehouse</h4>
                                     <p>O Data Warehouse das Estradas de Portugal, S.A. pretende ser uma plataforma que centraliza, por área, dados operacionais. Aplicando as melhores práticas conhecidas na indústria, recolhe, valida, uniformiza, agrega e disponibiliza informação sob vários formatos. O produto final será informação estratégica de qualidade.</p>
-                                    <p><a href="#" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>
+                                    <%--<p><a href="#" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>--%>
+                                    <p><a href="<c:url value="#" />" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>
                                 </div>
 
                                 <div class="tab-pane fade" id="SCRAP">              
@@ -117,18 +120,30 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><a href="#">links</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                                <td><a href="<c:url value="#" />">reports</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                               
+                                                <%--<td><a href="#">links</a></td>                                               
                                                 <td><a href="#">reports</a></td>
                                                 <td><a href="#">links</a></td>
                                                 <td><a href="#">links</a></td>
-                                                <td><a href="#">links</a></td>
+                                                <td><a href="#">links</a></td>--%>
                                             </tr>
                                             <tr>
-                                                <td><a href="#">links</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                                <td><a href="<c:url value="#" />">reports</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                                <td><a href="<c:url value="#" />">links</a></td>
+                                               
+                                                  <%--<td><a href="#">links</a></td>                                               
                                                 <td><a href="#">reports</a></td>
                                                 <td><a href="#">links</a></td>
                                                 <td><a href="#">links</a></td>
-                                                <td><a href="#">links</a></td>
+                                                <td><a href="#">links</a></td>--%>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -140,7 +155,8 @@
                                     <div class="tab-pane fade" id="${menu.id_menu}">
                                         <h4 style="color:#0072BB">${menu.item_menu}</h4>
                                         <p>${menu.descricao_menu}.</p>
-                                        <p><a href="${menu.url}" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>
+                                        <p><a href="<c:url value="${menu.url}" />" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>
+                                       <%-- <p><a href="${menu.url}" class="btn btn-success btn-small" style="color:#fff">Saber mais &raquo;</a></p>--%>
                                     </div>           
                                 </c:forEach>
 
@@ -216,7 +232,8 @@
                         <c:forEach items="${noticiaList}" var="noticia">
                             <tr>
                                 <%--O nº 1 foi incrementado em "href", para não fazer conflito com os menus--%>
-                                <td style="font-size:13px"><a class="fancybox" href="#p${noticia.id_noticia}">${noticia.titulo_noticia}</a></td>
+                                <%--<td style="font-size:13px"><a class="fancybox" href="#p${noticia.id_noticia}">${noticia.titulo_noticia}</a></td>--%>
+                                <td style="font-size:13px"><a class="fancybox" href="<c:url value="#p${noticia.id_noticia}" />" >${noticia.titulo_noticia}</a></td> 
                                 <td style="font-size:13px">${noticia.data_noticia}</td>
                             </tr>  
                         </c:forEach>
@@ -248,8 +265,8 @@
         <%-- É importante que esteja para a animação do menu
        ================================================== --%>
         <%-- Placed at the end of the document so the pages load faster--%>
-        <script src="/resources/js/bootstrap.min.js"></script>
-        <%--<script src="../../resources/js/bootstrap.min.js"></script>--%>
+        <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script> 
+        <%--<script src="/resources/js/bootstrap.min.js"></script>--%>
 
         <%--Esta funcão determina que, ao passar o mouse por cima da TAB, o conteudo muda, se apagar, volta ao normal ou seja, tem que se clicar para alterar o conteudo--%>
         <script type="text/javascript">

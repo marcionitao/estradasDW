@@ -16,21 +16,6 @@
         <%@include file="/WEB-INF/jsp/common/libs.jsp" %> 
         <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
 
-        <%-- Script para confirmar se o item da lista é eliminado ou não--%>
-        <script type="text/javascript">
-        
-            $(document).ready(function(){
-            
-                $("#del").click(function(){
-                
-                    return confirm("Tem a certeza de que deseja eliminar este item?");
-                
-                });
-            
-            });
-        
-        </script>
-
     </head>
 
     <body>
@@ -57,22 +42,22 @@
                         <h3 style="color:#0072BB;"align="left">DW - Gestão dos Menus</h3>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw.html" class="thumbnail">--%>
-                        <a href="/" class="thumbnail">
+                        <%--<a href="/" class="thumbnail">--%>                      
+                        <a href="<c:url value="/" />" class="thumbnail">
                             <%--<img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">--%>
                             <img src="<c:url value="/resources/img/home_peq.png"/> " alt="Home" title="Home">
                         </a>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw/admin/novoItem.html" class="thumbnail">--%>
-                        <a href="/admin/novoItem" class="thumbnail">
+                        <%--<a href="/admin/novoItem" class="thumbnail">--%>                    
+                        <a href="<c:url value="/admin/novoItem" />" class="thumbnail">
                             <img src="<c:url value="/resources/img/add.png"/> " alt="add" title="Novo Item"> 
                             <%--<img src="/resources/img/add.png" alt="add" title="Novo Item">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw/admin.html" class="thumbnail">--%>
-                        <a href="/admin" class="thumbnail">
+                        <%--<a href="/admin" class="thumbnail">--%>
+                        <a href="<c:url value="/admin" />" class="thumbnail">   
                             <img src="<c:url value="/resources/img/admin.png"/> " alt="Admin" title="Administração"> 
                             <%--<img src="/resources/img/admin.png" alt="Admin" title="Administração">--%>
                         </a>
@@ -99,26 +84,26 @@
                 <!--parte refernte a listagem-->
                 <c:forEach items="${menuList}" var="menu">
                     <%--criamos uma variavel para conter o caminho que pretendemos--%>
-                    <c:url var="url" value="/admin/editItem/${menu.id_menu}" />   
-                    <c:url var="url_2" value="/admin/deleteItem/${menu.id_menu}" />   
+                    <%--<c:url var="url" value="/admin/editItem/${menu.id_menu}" />   --%>
+                    <%--<c:url var="url_2" value="/admin/deleteItem/${menu.id_menu}" /> --%>
 
                     <tr class="warning">
 
                         <%--url refere-se ao conteudo do id receitas, é uma variavel antes da listagem --%>
-                        <form:form action="${url}/edit" method="GET">
+                        <form:form action="/admin/editItem/${menu.id_menu}/edit" method="GET">
 
                             <%--aqui, definimos que será mostrado o id e o titulo da receita, mas apenas o titulo é clicavel --%>
                             <td>${menu.id_menu}</td>
-                            <td><a href="<c:url value="${url}"/>/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
+                            <td><a href="<c:url value="/admin/editItem/${menu.id_menu}"/>/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
                         </form:form>
 
                         <%--url refere-se ao botão para eliminar receita --%>
-                        <form:form action="${url_2}/delete" method="DELETE">
+                        <form:form action="/admin/deleteItem/${menu.id_menu}/delete" method="DELETE">
 
                             <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
-                            <%--<td><a href="<c:url value="${url_2}"/>/delete.html" id="del"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>--%>
-                            <td><a href="<c:url value="${url_2}"/>/delete" id="del"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>
-                                </form:form> 
+                            <%--<td><a href="<c:url value="${url_2}"/>/delete" id="del"><img src="../../resources/img/del.png" title="Apagar Item"/></a> </td>--%>
+                            <td><a href="<c:url value="/admin/deleteItem/${menu.id_menu}"/>/delete" id="del"><img src="<c:url value="/resources/img/del.png"/> " title="Apagar Item"></a></td>
+                        </form:form> 
 
                     </tr>
 
@@ -134,5 +119,20 @@
         <script src="/resources/js/bootstrap.min.js"></script>
 
     </body>
+    
+     <%-- Script para confirmar se o item da lista é eliminado ou não--%>
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+            
+                $("#del").click(function(){
+                
+                    return confirm("Tem a certeza de que deseja eliminar este item?");
+                
+                });
+            
+            });
+        
+        </script>
 
 </html>

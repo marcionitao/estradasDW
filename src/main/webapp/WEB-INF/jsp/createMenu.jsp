@@ -40,22 +40,22 @@
                         <h3 style="color:#0072BB;"align="left">DW - Novo item de Menu</h3>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw.html" class="thumbnail">--%>
-                        <a href="/" class="thumbnail">
+                        <%--<a href="/" class="thumbnail">--%>
+                          <a href="<c:url value="/" />" class="thumbnail">
                             <img src="<c:url value="/resources/img/home_peq.png"/> " alt="Home" title="Home">   
                            <%-- <img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                       <%-- <a href="/homedw/admin/listMenu.html" class="thumbnail">--%>
-                        <a href="/admin/listMenu" class="thumbnail">
+                       <%-- <a href="/admin/listMenu" class="thumbnail">--%>                        
+                        <a href="<c:url value="/admin/listMenu" />" class="thumbnail">
                             <img src="<c:url value="/resources/img/list.png"/> " alt="list" title="Listar Itens"> 
                            <%-- <img src="/resources/img/list.png" alt="list" title="Listar Itens">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw/admin.html" class="thumbnail">--%>
-                        <a href="/admin" class="thumbnail">
+                        <%--<a href="/adminl" class="thumbnail">--%>
+                        <a href="<c:url value="/admin" />" class="thumbnail">                      
                             <img src="<c:url value="/resources/img/admin.png"/> " alt="Admin" title="Administração"> 
                             <%--<img src="/resources/img/admin.png" alt="Admin" title="Administração">--%>
                         </a>

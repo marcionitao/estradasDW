@@ -53,22 +53,22 @@
                         <h3 style="color:#0072BB;"align="left">DW - Gestão das Noticias</h3>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw.html" class="thumbnail">--%>
-                        <a href="/" class="thumbnail">
+                        <%--<a href="/" class="thumbnail">--%>                       
+                        <a href="<c:url value="/" />" class="thumbnail">  
                             <%--<img src="/resources/img/home_peq.png" alt="Home" title="HomeDW">--%>
                             <img src="<c:url value="/resources/img/home_peq.png"/> " alt="Home" title="Home">   
                         </a>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw/admin/novaNoticia.html" class="thumbnail">--%>
-                        <a href="/admin/novaNoticia" class="thumbnail">
+                        <%--<a href="/admin/novaNoticia" class="thumbnail">--%>                       
+                        <a href="<c:url value="/admin/novaNoticia" />" class="thumbnail">   
                             <img src="<c:url value="/resources/img/add.png"/> " alt="add" title="Novo Item"> 
                            <%-- <img src="/resources/img/add.png" alt="add" title="Novo Item">--%>
                         </a>
                     </div>
                     <div class="span1" >   
-                        <%--<a href="/homedw/admin.html" class="thumbnail">--%>
-                        <a href="/admin" class="thumbnail">
+                        <%--<a href="/admin" class="thumbnail">--%>                  
+                        <a href="<c:url value="/admin" />" class="thumbnail">   
                             <img src="<c:url value="/resources/img/admin.png"/> " alt="Admin" title="Administração"> 
                             <%--<img src="/resources/img/admin.png" alt="Admin" title="Administração">--%>
                         </a>
@@ -99,27 +99,27 @@
                     <!--parte refernte a listagem-->
                     <c:forEach items="${noticiaList}" var="noticia">
                         <%--criamos uma variavel para conter o caminho que pretendemos--%>
-                        <c:url var="url" value="/admin/editNoticia/${noticia.id_noticia}" />   
-                        <c:url var="url_2" value="/admin/deleteNoticia/${noticia.id_noticia}" />   
+                       <%--<c:url var="url" value="/admin/editNoticia/${noticia.id_noticia}" />--%>
+                       <%--<c:url var="url_2" value="/admin/deleteNoticia/${noticia.id_noticia}" />--%>
 
                         <tr>
 
                             <%--url refere-se ao conteudo do id receitas, é uma variavel antes da listagem --%>
-                            <form:form action="${url}/edit" method="GET">
+                            <form:form action="/admin/editNoticia/${noticia.id_noticia}/edit" method="GET">
 
                                 <%--aqui, definimos que será mostrado o id e o titulo da receita, mas apenas o titulo é clicavel --%>
                                 <td>${noticia.id_noticia}</td>
-                                <td><a href="<c:url value="${url}"/>/edit.html" title="Mostrar Noticia">${noticia.titulo_noticia}</a></td>
+                                <td><a href="<c:url value="/admin/editNoticia/${noticia.id_noticia}"/>/edit.html" title="Mostrar Noticia">${noticia.titulo_noticia}</a></td>
                                 <td>${noticia.data_noticia}</td>
                             </form:form>
 
                             <%--url refere-se ao botão para eliminar receita --%>
-                            <form:form action="${url_2}/delete" method="DELETE">
+                            <form:form action="/admin/deleteNoticia/${noticia.id_noticia}/delete" method="DELETE">
 
                                 <%--aqui, definimos um botão "eliminar" para cada item do menu. --%>
-                                <%--<td><a href="<c:url value="${url_2}"/>/delete.html"id="del"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>--%>
-                                <td><a href="<c:url value="${url_2}"/>/delete"id="del"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>
-                                    </form:form> 
+                                <%--<td><a href="<c:url value="${url_2}"/>/delete"id="del"><img src="../../resources/img/del.png" title="Apagar Noticia"/></a></td>--%>                              
+                                <td><a href="<c:url value="/admin/deleteNoticia/${noticia.id_noticia}"/>/delete" id="del"><img src="<c:url value="/resources/img/del.png"/> " title="Apagar Noticia"></a></td>
+                            </form:form> 
 
                         </tr>                  
 
