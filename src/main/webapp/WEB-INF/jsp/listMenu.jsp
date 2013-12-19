@@ -94,7 +94,7 @@
 
                             <%--aqui, definimos que será mostrado o id e o titulo da receita, mas apenas o titulo é clicavel --%>
                             <td>${menu.id_menu}</td>
-                            <td><a href="<c:url value="/admin/editItem/${menu.id_menu}"/>/edit.html" title="Mostrar Itens">${menu.item_menu}</a></td>
+                            <td><a href="<c:url value="/admin/editItem/${menu.id_menu}"/>/edit" title="Mostrar Itens">${menu.item_menu}</a></td>
                         </form:form>
 
                         <%--url refere-se ao botão para eliminar receita --%>

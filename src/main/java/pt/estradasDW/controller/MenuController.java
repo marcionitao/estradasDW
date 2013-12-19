@@ -62,8 +62,8 @@ public class MenuController {
     }
 
     //acção de editar os itens de menu
-    @RequestMapping("/**")
-    public String update(@ModelAttribute("menu") Menu menu) {
+    @RequestMapping("/admin/editItem")
+    public String updateMenu(@ModelAttribute("menu") Menu menu) {
 
         menuService.editMenu(menu);
 

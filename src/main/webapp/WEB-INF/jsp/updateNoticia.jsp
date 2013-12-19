@@ -87,7 +87,7 @@
                     </tr>
                     <tr>
                         <td><strong for="data_noticia"/>Data</td>
-                        <td><form:input path="data_noticia" class="input-small" style="height: 30px;" readonly = "true" name="data_noticia" id="data_noticia"/></td>
+                        <td><form:input path="data_noticia" class="input" style="height: 30px;" readonly = "true" name="data_noticia" id="data_noticia"/></td>
                     </tr>
                     <tr>
                         <td>
@@ -102,4 +102,19 @@
         </div><%--2º container --%>  
 
     </body>
+    
+    <%-- Script para confirmar se o item da lista é editado ou não--%>
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+            
+                $("#edita").click(function(){
+                
+                    return alert("Sucesso! As alterações foram implementadas.");
+                
+                });
+            
+            });
+        
+        </script>
 </html>

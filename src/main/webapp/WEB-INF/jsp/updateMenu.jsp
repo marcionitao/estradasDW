@@ -102,4 +102,19 @@
         </div><%--2º container --%>  
 
     </body>
+    
+      <%-- Script para confirmar se o item da lista é editado ou não--%>
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+            
+                $("#edit").click(function(){
+                
+                    return alert("Sucesso! As alterações foram implementadas.");
+                
+                });
+            
+            });
+        
+        </script>
 </html>
