@@ -12,10 +12,10 @@
 	  <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.org.mortbay.jetty.jetty.maven.plugin>8.1.8.v20121106</version.org.mortbay.jetty.jetty.maven.plugin>
-        <version.org.springframework.spring.webmvc>3.2.1.RELEASE</version.org.springframework.spring.webmvc>
-        <version.org.springframework.spring.core>3.2.1.RELEASE</version.org.springframework.spring.core>
-        <version.org.springframework.spring.context>3.2.1.RELEASE</version.org.springframework.spring.context>
-        <version.org.springframework.spring.web>3.2.1.RELEASE</version.org.springframework.spring.web>
+          <version.org.springframework.spring.webmvc>4.0.3.RELEASE</version.org.springframework.spring.webmvc>
+          <version.org.springframework.spring.core>4.0.3.RELEASE</version.org.springframework.spring.core>
+          <version.org.springframework.spring.context>4.0.3.RELEASE</version.org.springframework.spring.context>
+          <version.org.springframework.spring.web>4.0.3.RELEASE</version.org.springframework.spring.web>
         <version.javax.servlet.jstl>1.2</version.javax.servlet.jstl>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
     </properties>
@@ -68,24 +68,23 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>3.2.1.RELEASE</version>
+            <version>4.0.3.RELEASE</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>3.2.1.RELEASE</version>
+            <version>4.0.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>3.2.1.RELEASE</version>
+            <version>4.0.3.RELEASE</version>
         </dependency>
-         
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>3.2.1.RELEASE</version>
+            <version>4.0.3.RELEASE</version>
         </dependency>
         
          <!--jstl-->
