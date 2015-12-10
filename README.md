@@ -1,11 +1,8 @@
 [![Build Status](https://travis-ci.org/marcionitao/estradasDW.svg?branch=master)](https://travis-ci.org/marcionitao/estradasDW)
-[![Coverage Status](https://coveralls.io/repos/marcionitao/estradasDW/badge.svg?branch=master)](https://coveralls.io/r/marcionitao/estradasDW?branch=master)
 
 Web Home page SCRAP
 
-O objetivo desse projeto é efectuar e implementar alterações ao site interno da Estradas de Portugal de forma a melhorar a
-experiência do cliente (interno) com a interação do DataWarehouse que se encontra a desenvolver em paralelo pela
-Estradas de Portugal.
+The objective of this project is to execute and implement changes to internal Web site Estradas de Portugal in order to improve the customer experience (internal) with the interaction of DataWarehouse that develop in parallel lies by Estradas de Portugal.
 
 link home page:
 http://estradas-nitao.rhcloud.com/estrdasDW/
