@@ -66,7 +66,6 @@ public class MenuController {
     public String updateMenu(@ModelAttribute("menu") Menu menu) {
 
         menuService.editMenu(menu);
-
         //return "redirect:/homedw/admin/listMenu.html";
         return "redirect:/admin/listMenu";
     }

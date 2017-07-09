@@ -1,9 +1,12 @@
 
 package pt.estradasDW.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity //informa ao Hibernate que esta classe representa um objeto que pode persistir.
 @Table(name="noticias")
@@ -13,10 +16,19 @@ public class Noticia implements Serializable{
     @Column//anotação é usada para mapear essa propriedade para a coluna nome na tabela de Studants.
     @GeneratedValue(strategy = GenerationType.AUTO) //for autonumber
     private int id_noticia;
-    @Column(name = "titulo_noticia", nullable = true)
+
+    @NotNull
+    @NotBlank
+    @Column(name = "titulo_noticia", nullable = true, length = 400)
     private String titulo_noticia;
-    @Column(name = "descricao_noticia", nullable = true, length = 700)
+
+    @NotNull
+    @NotBlank
+    @Column(name = "descricao_noticia", nullable = true, length = 900)
     private String descricao_noticia;
+
+    @NotNull
+    @NotBlank
     @Column(name = "data_noticia", nullable = true, columnDefinition = "TIMESTAMP default 0")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data_noticia;
@@ -62,8 +74,5 @@ public class Noticia implements Serializable{
     public void setTitulo_noticia(String titulo_noticia) {
         this.titulo_noticia = titulo_noticia;
     }
-    
-    
-    
-    
+
 }

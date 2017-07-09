@@ -1,20 +1,14 @@
 package pt.estradasDW.controller;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.Map;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pt.estradasDW.model.Menu;
 import pt.estradasDW.model.Noticia;
-
-import pt.estradasDW.service.MenuService;
 import pt.estradasDW.service.NoticiaService;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class NoticiaController {
@@ -63,12 +57,13 @@ public class NoticiaController {
     }
 
     //acção de editar a noticia
-    @RequestMapping(value="/**", method = RequestMethod.POST)
-    public String updateNoticia(@ModelAttribute("noticia")  Noticia noticia) {
+    @RequestMapping(value = "/admin/editNoticia")
+    public String updateNoticia(@ModelAttribute("noticia")  Noticia noticia, BindingResult errors) {
 
         noticiaService.editNoticia(noticia);
-
-        //return "redirect:/homedw/admin/listNoticia.html";
+        if (errors.hasErrors()) {
+            System.out.println(errors);
+        }
         return "redirect:/admin/listNoticia";
     }
     
@@ -78,8 +73,6 @@ public class NoticiaController {
         //chama o metodo e passa o valor do id do registo a ser eliminado
         noticiaService.deleteNoticia(idNoticia);
 
-        //após eliminar ele redireciona para o listar itensdo menu
-        //return "redirect:/homedw/admin/listNoticia.html";
         return "redirect:/admin/listNoticia";
     }
     

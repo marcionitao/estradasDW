@@ -70,7 +70,7 @@
 
         <div class="container"><%-- 2º container --%>  
 
-            <form:form action="/admin/editNoticia/${id_noticia}" method="PUT" commandName="noticia" id="contact-form">
+            <form:form action="/admin/editNoticia/${id_noticia}" method="PUT" commandName="noticia">
                 <table width=80% align="right">
 
                     <tr>

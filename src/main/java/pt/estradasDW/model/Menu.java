@@ -12,10 +12,13 @@ public class Menu implements Serializable{
     @Column//anotação é usada para mapear essa propriedade para a coluna nome na tabela de Studants.
     @GeneratedValue(strategy = GenerationType.AUTO) //for autonumber
     private int id_menu;
+
     @Column(name = "item_menu", nullable = true)
     private String item_menu;
+
     @Column(name = "descricao_menu", nullable = true, length = 500)
     private String descricao_menu;
+
     @Column(name = "url",nullable = true)
     private String url;
     
